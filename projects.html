@@ -1,134 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects – Disha Kataria</title>
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
-        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">DK</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <canvas id="bg"></canvas>
 
     <div class="content">
         <section>
             <h2>Featured Projects</h2>
+            <p style="max-width: 800px; margin-bottom: 2rem;">
+                Here's a showcase of my work in AI/ML engineering, from enterprise systems to research projects. Click on project images to explore them further.
+            </p>
 
-            <div class="grid">
-                <!-- DevRev Project -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <h3>DevRev Code Quality Evaluator</h3>
-                            <p style="color: #60a5fa;">LLM-based automated code review system</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>Designed comprehensive AI-powered code evaluation system aligned with DevRev standards
-                            </li>
-                            <li>Implemented GPT-4 based models with sophisticated custom prompt engineering</li>
-                            <li>Built RAG pipeline for contextual evaluation using organization-specific knowledge</li>
-                        </ul>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">GPT-4</span>
-                        <span class="tag">RAG Architecture</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">Vector DBs</span>
+            <!-- Project Images Gallery -->
+            <div class="project-images">
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop" alt="Code Quality">
+                    <div class="project-image-overlay">
+                        <span>DevRev Code Evaluator</span>
                     </div>
                 </div>
-
-                <!-- Campus Chatbot -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <h3>Intelligent Campus Assistant</h3>
-                            <p style="color: #60a5fa;">Smart India Hackathon 2024 National Finalist</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="message-circle"></i>
-                        </div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Overview</h4>
-                        <ul>
-                            <li>Built conversational AI using advanced NLP and transformer models</li>
-                            <li>Implemented real-time campus query resolution for academic and administrative questions
-                            </li>
-                            <li>Handled multiple query types simultaneously with context retention</li>
-                        </ul>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">NLP</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">🏆 National</span>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500&h=300&fit=crop" alt="Chatbot">
+                    <div class="project-image-overlay">
+                        <span>Campus Assistant</span>
                     </div>
                 </div>
-
-                <!-- Mental Health Platform -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <h3>Mental Health Support Platform</h3>
-                            <p style="color: #60a5fa;">Smart India Hackathon 2025 Project</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="heart"></i>
-                        </div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Vision</h4>
-                        <ul>
-                            <li>Developing AI-driven system for student wellbeing and stress detection</li>
-                            <li>Implementing advanced sentiment analysis using fine-tuned transformer models</li>
-                            <li>Building privacy-preserving ML models for sensitive data</li>
-                        </ul>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">GenAI</span>
-                        <span class="tag">Sentiment Analysis</span>
-                        <span class="tag">Privacy ML</span>
-                        <span class="tag">🏆 National</span>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop" alt="Mental Health">
+                    <div class="project-image-overlay">
+                        <span>Mental Health Platform</span>
                     </div>
                 </div>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop" alt="Analytics">
+                    <div class="project-image-overlay">
+                        <span>Mann-ki-Baat Analytics</span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Mann-ki-Baat Analytics -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <h3>Mann-ki-Baat Analytics</h3>
-                            <p style="color: #60a5fa;">NLP + Stock Prediction Research</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="trending-up"></i>
-                        </div>
+            <!-- DevRev Project -->
+            <div class="card" style="cursor: default; margin-top: 3rem;">
+                <div class="card-header">
+                    <div>
+                        <h3>DevRev Code Quality Evaluator</h3>
+                        <p style="color: #60a5fa;">LLM-based automated code review system</p>
                     </div>
-                    <div class="modal-section">
-                        <h4>Methodology</h4>
-                        <ul>
-                            <li>Used BERT for deep contextual understanding of policy speeches</li>
-                            <li>Correlated policy sentiment with sectoral market movements</li>
-                            <li>Achieved 78% accuracy in identifying policy-driven market impacts</li>
-                        </ul>
+                    <div class="card-icon">
+                        <i data-lucide="code-2"></i>
                     </div>
-                    <div class="card-tags">
-                        <span class="tag">BERT</span>
-                        <span class="tag">LDA</span>
-                        <span class="tag">Time Series</span>
-                        <span class="tag">78% Accuracy</span>
+                </div>
+                <div class="modal-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Designed comprehensive AI-powered code evaluation system aligned with DevRev standards</li>
+                        <li>Implemented GPT-4 based models with sophisticated custom prompt engineering</li>
+                        <li>Built RAG pipeline for contextual evaluation using organization-specific knowledge</li>
+                        <li>Automated feedback generation covering readability, security vulnerabilities, and performance optimizations</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">GPT-4</span>
+                    <span class="tag">RAG Architecture</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">Vector DBs</span>
+                    <span class="tag">Prompt Engineering</span>
+                </div>
+            </div>
+
+            <!-- Campus Chatbot -->
+            <div class="card" style="cursor: default;">
+                <div class="card-header">
+                    <div>
+                        <h3>Intelligent Campus Assistant</h3>
+                        <p style="color: #60a5fa;">Smart India Hackathon 2024 National Finalist 🏆</p>
                     </div>
+                    <div class="card-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h4>Overview</h4>
+                    <ul>
+                        <li>Built conversational AI using advanced NLP and transformer models</li>
+                        <li>Implemented real-time campus query resolution for academic and administrative questions</li>
+                        <li>Handled multiple query types simultaneously with context retention</li>
+                        <li>Advanced to national-level competition after clearing institutional rounds</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">NLP</span>
+                    <span class="tag">Transformers</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Real-time Processing</span>
+                    <span class="tag">🏆 National</span>
+                </div>
+            </div>
+
+            <!-- Mental Health Platform -->
+            <div class="card" style="cursor: default;">
+                <div class="card-header">
+                    <div>
+                        <h3>Mental Health Support Platform</h3>
+                        <p style="color: #60a5fa;">Smart India Hackathon 2025 National Finalist 🏆</p>
+                    </div>
+                    <div class="card-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h4>Vision</h4>
+                    <ul>
+                        <li>Developing AI-driven system for student wellbeing and stress detection</li>
+                        <li>Implementing advanced sentiment analysis using fine-tuned transformer models</li>
+                        <li>Building privacy-preserving ML models for sensitive data</li>
+                        <li>Real-time stress detection using behavioral and linguistic cues</li>
+                        <li>Integration with campus counseling resources for critical cases</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">GenAI</span>
+                    <span class="tag">Sentiment Analysis</span>
+                    <span class="tag">Privacy ML</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Ethical AI</span>
+                    <span class="tag">🏆 National</span>
+                </div>
+            </div>
+
+            <!-- Mann-ki-Baat Analytics -->
+            <div class="card" style="cursor: default;">
+                <div class="card-header">
+                    <div>
+                        <h3>Mann-ki-Baat Analytics & Stock Prediction</h3>
+                        <p style="color: #60a5fa;">NLP + Stock Prediction Research | November 2025</p>
+                    </div>
+                    <div class="card-icon">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h4>Methodology</h4>
+                    <ul>
+                        <li>Used BERT for deep contextual understanding of policy speeches</li>
+                        <li>Applied Latent Dirichlet Allocation (LDA) to extract key policy themes</li>
+                        <li>Correlated policy sentiment with sectoral market movements</li>
+                        <li>Achieved 78% accuracy in identifying policy-driven market impacts</li>
+                        <li>Built ensemble models combining NLP features with financial indicators</li>
+                    </ul>
+                </div>
+                <div class="card-tags">
+                    <span class="tag">BERT</span>
+                    <span class="tag">LDA</span>
+                    <span class="tag">Time Series</span>
+                    <span class="tag">78% Accuracy</span>
+                    <span class="tag">Predictive Modeling</span>
                 </div>
             </div>
         </section>
@@ -141,5 +193,4 @@
     <script src="navigation.js"></script>
     <script src="background.js"></script>
 </body>
-
 </html>

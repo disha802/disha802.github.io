@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact – Disha Kataria</title>
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
-        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">DK</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <canvas id="bg"></canvas>
 
     <div class="content">
-        <section class="hero" style="margin-top: 6rem;">
+        <section class="hero" style="margin-top: 2rem;">
             <div class="profile">
                 <img src="profile.jpg" alt="Disha Kataria">
             </div>
@@ -25,13 +39,11 @@
                 <h1>Let's Connect</h1>
                 <div class="tagline">Collaboration happens here.</div>
                 <p class="subtitle">
-                    I'm always open to discussing new projects, research opportunities, or just nerding out about AI &
-                    Systems Thinking.
+                    I'm always open to discussing new projects, research opportunities, or just nerding out about AI & Systems Thinking.
                 </p>
 
                 <div class="socials">
-                    <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer"
-                        aria-label="LinkedIn">
+                    <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i data-lucide="linkedin"></i>
                     </a>
                     <a href="https://github.com/disha802" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -43,10 +55,42 @@
                 </div>
 
                 <div style="margin-top: 3rem;">
-                    <p style="color: #60a5fa; font-family: 'JetBrains Mono', monospace;">Email:
-                        Disha.m.kataria@gmail.com</p>
+                    <p style="color: #60a5fa; font-family: 'JetBrains Mono', monospace;">Email: Disha.m.kataria@gmail.com</p>
                     <p style="margin-top: 0.5rem;">Based in Mumbai, India 🇮🇳</p>
                 </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Send Me a Message</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell me more..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Send Message
+                    </button>
+                    
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </form>
             </div>
         </section>
 
@@ -57,6 +101,60 @@
 
     <script src="navigation.js"></script>
     <script src="background.js"></script>
-</body>
+    <script>
+        // Contact form handler
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
 
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                // Create mailto link with form data
+                const mailtoLink = `mailto:Disha.m.kataria@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(
+                    `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+                )}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                formMessage.textContent = 'Opening your email client...';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Reset form after a delay
+                setTimeout(() => {
+                    form.reset();
+                    formMessage.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }, 3000);
+                
+            } catch (error) {
+                // Show error message
+                formMessage.textContent = 'Failed to open email client. Please email directly at Disha.m.kataria@gmail.com';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
 </html>

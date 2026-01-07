@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Disha Kataria – AI Engineer</title>
-
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
-    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">DK</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <canvas id="bg"></canvas>
 
   <div class="content">
-
     <!-- HERO -->
-    <section class="hero" id="hero">
+    <section class="hero">
       <div class="profile">
         <img src="profile.jpg" alt="Disha Kataria">
       </div>
@@ -33,12 +45,8 @@
         </p>
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-number">9.87</div>
+            <div class="stat-number">9.888</div>
             <div class="stat-label">CGPA</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">2x</div>
-            <div class="stat-label">National Finalist</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">78%</div>
@@ -46,8 +54,7 @@
           </div>
         </div>
         <div class="socials">
-          <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer"
-            aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i data-lucide="linkedin"></i>
           </a>
           <a href="https://github.com/disha802" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -60,7 +67,7 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
+    <!-- EDUCATION -->
     <section>
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
         <h2>Education</h2>
@@ -85,9 +92,10 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section>
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <h2>Recent Projects</h2>
+        <h2>Featured Projects</h2>
         <a href="projects.html" style="color: #60a5fa; text-decoration: none; font-size: 0.9rem;">View All →</a>
       </div>
       <div class="grid">
@@ -126,6 +134,7 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section>
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
         <h2>Experience</h2>
@@ -150,11 +159,9 @@
     <footer>
       <p>© <span id="year"></span> Disha Kataria · Built with passion for AI & Systems Thinking</p>
     </footer>
-
   </div>
 
   <script src="navigation.js"></script>
   <script src="background.js"></script>
 </body>
-
 </html>
