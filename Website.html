@@ -9,6 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B34E469JWH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B34E469JWH');
+  </script>
 
   <style>
     * {
@@ -768,7 +777,36 @@
     <!-- PROJECTS -->
     <section id="projects">
       <h2>Projects</h2>
-      <div class="grid">
+
+      <div class="project-images">
+        <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop" alt="Code Quality">
+          <div class="project-image-overlay">
+            <span>DevRev Code Evaluator</span>
+          </div>
+        </div>
+        <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+          <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500&h=300&fit=crop" alt="Chatbot">
+          <div class="project-image-overlay">
+            <span>Campus Assistant</span>
+          </div>
+        </div>
+        <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop"
+            alt="Mental Health">
+          <div class="project-image-overlay">
+            <span>Mental Health Platform</span>
+          </div>
+        </div>
+        <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop" alt="Analytics">
+          <div class="project-image-overlay">
+            <span>Mann-ki-Baat Analytics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top: 3rem;">
         <div class="card" data-modal="devrev">
           <div class="card-header">
             <div>
@@ -1105,7 +1143,7 @@
           <li>Built intelligent conversational AI chatbot using advanced NLP and transformer models</li>
           <li>Implemented real-time campus query resolution for academic, administrative, and facility-related questions
           </li>
-          <li>Advanced to national-level competition after successfully clearing institutional rounds</li>
+          <li>Advanced to final-level competition after successfully clearing institutional rounds</li>
           <li>Designed to handle multiple query types simultaneously with context retention</li>
         </ul>
       </div>

@@ -11,6 +11,15 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B34E469JWH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-B34E469JWH');
+    </script>
 </head>
 
 <body>
@@ -20,7 +29,38 @@
         <section>
             <h2>Featured Projects</h2>
 
-            <div class="grid">
+            <div class="project-images">
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop"
+                        alt="Code Quality">
+                    <div class="project-image-overlay">
+                        <span>DevRev Code Evaluator</span>
+                    </div>
+                </div>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500&h=300&fit=crop"
+                        alt="Chatbot">
+                    <div class="project-image-overlay">
+                        <span>Campus Assistant</span>
+                    </div>
+                </div>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop"
+                        alt="Mental Health">
+                    <div class="project-image-overlay">
+                        <span>Mental Health Platform</span>
+                    </div>
+                </div>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop"
+                        alt="Analytics">
+                    <div class="project-image-overlay">
+                        <span>Mann-ki-Baat Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid" style="margin-top: 3rem;">
                 <!-- DevRev Project -->
                 <div class="card" style="cursor: default;">
                     <div class="card-header">
