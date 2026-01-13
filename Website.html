@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Disha Kataria – AI Engineer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       background: #020617;
@@ -19,9 +25,9 @@
       min-height: 100vh;
     }
 
-    canvas { 
-      position: fixed; 
-      inset: 0; 
+    canvas {
+      position: fixed;
+      inset: 0;
       z-index: 0;
       width: 100%;
       height: 100%;
@@ -35,7 +41,9 @@
       margin: 0 auto;
     }
 
-    section { margin-top: 5rem; }
+    section {
+      margin-top: 5rem;
+    }
 
     h2 {
       font-size: 2rem;
@@ -47,15 +55,18 @@
       font-weight: 600;
     }
 
-    p { color: #94a3b8; line-height: 1.7; }
+    p {
+      color: #94a3b8;
+      line-height: 1.7;
+    }
 
     .stat-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       padding: 0.5rem 1rem;
-      background: rgba(96,165,250,0.1);
-      border: 1px solid rgba(96,165,250,0.3);
+      background: rgba(96, 165, 250, 0.1);
+      border: 1px solid rgba(96, 165, 250, 0.3);
       border-radius: 30px;
       font-size: 0.85rem;
       margin: 0.3rem;
@@ -63,7 +74,7 @@
     }
 
     .stat-badge:hover {
-      background: rgba(96,165,250,0.2);
+      background: rgba(96, 165, 250, 0.2);
       transform: translateY(-2px);
     }
 
@@ -89,13 +100,20 @@
       border-radius: 50%;
       overflow: hidden;
       position: relative;
-      box-shadow: 0 0 100px rgba(96,165,250,0.5), 0 0 200px rgba(167,139,250,0.3);
+      box-shadow: 0 0 100px rgba(96, 165, 250, 0.5), 0 0 200px rgba(167, 139, 250, 0.3);
       animation: pulse-glow 3s ease-in-out infinite;
     }
 
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 100px rgba(96,165,250,0.5), 0 0 200px rgba(167,139,250,0.3); }
-      50% { box-shadow: 0 0 150px rgba(96,165,250,0.7), 0 0 250px rgba(167,139,250,0.5); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 100px rgba(96, 165, 250, 0.5), 0 0 200px rgba(167, 139, 250, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 150px rgba(96, 165, 250, 0.7), 0 0 250px rgba(167, 139, 250, 0.5);
+      }
     }
 
     .profile::before {
@@ -109,15 +127,17 @@
     }
 
     @keyframes rotate {
-      100% { transform: rotate(360deg); }
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
-    .profile img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      position: relative; 
-      z-index: 1; 
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-text h1 {
@@ -142,8 +162,8 @@
       margin-bottom: 1rem;
     }
 
-    .subtitle { 
-      margin-top: 1.2rem; 
+    .subtitle {
+      margin-top: 1.2rem;
       font-size: 1.1rem;
       max-width: 700px;
       color: #cbd5e1;
@@ -190,8 +210,8 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: rgba(96,165,250,0.1);
-      border: 1px solid rgba(96,165,250,0.3);
+      background: rgba(96, 165, 250, 0.1);
+      border: 1px solid rgba(96, 165, 250, 0.3);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
@@ -208,7 +228,7 @@
 
     .socials a:hover {
       transform: translateY(-8px) scale(1.1);
-      box-shadow: 0 20px 60px rgba(96,165,250,0.5);
+      box-shadow: 0 20px 60px rgba(96, 165, 250, 0.5);
       border-color: transparent;
     }
 
@@ -229,8 +249,8 @@
     }
 
     .card {
-      background: linear-gradient(135deg, rgba(96,165,250,0.05), rgba(167,139,250,0.05));
-      border: 1px solid rgba(96,165,250,0.2);
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(167, 139, 250, 0.05));
+      border: 1px solid rgba(96, 165, 250, 0.2);
       border-radius: 24px;
       padding: 2rem;
       cursor: pointer;
@@ -243,15 +263,15 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(167,139,250,0.1));
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(167, 139, 250, 0.1));
       opacity: 0;
       transition: opacity 0.4s ease;
     }
 
     .card:hover {
       transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 30px 90px rgba(96,165,250,0.3), 0 0 0 1px rgba(96,165,250,0.5);
-      border-color: rgba(96,165,250,0.5);
+      box-shadow: 0 30px 90px rgba(96, 165, 250, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.5);
+      border-color: rgba(96, 165, 250, 0.5);
     }
 
     .card:hover::before {
@@ -263,13 +283,24 @@
     }
 
     @keyframes punk {
-      0% { transform: scale(1); }
-      30% { transform: scale(1.08) rotate(1deg); }
-      60% { transform: scale(0.95) rotate(-1deg); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      30% {
+        transform: scale(1.08) rotate(1deg);
+      }
+
+      60% {
+        transform: scale(0.95) rotate(-1deg);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
-    .card h3 { 
+    .card h3 {
       margin-bottom: 0.8rem;
       font-size: 1.25rem;
       position: relative;
@@ -297,10 +328,10 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(96,165,250,0.2), rgba(167,139,250,0.2));
+      background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2));
       display: grid;
       place-items: center;
-      border: 1px solid rgba(96,165,250,0.3);
+      border: 1px solid rgba(96, 165, 250, 0.3);
       flex-shrink: 0;
     }
 
@@ -316,8 +347,8 @@
     .tag {
       font-size: 0.75rem;
       padding: 0.4rem 0.8rem;
-      background: rgba(96,165,250,0.15);
-      border: 1px solid rgba(96,165,250,0.3);
+      background: rgba(96, 165, 250, 0.15);
+      border: 1px solid rgba(96, 165, 250, 0.3);
       border-radius: 20px;
       color: #93c5fd;
       font-weight: 500;
@@ -331,17 +362,17 @@
     }
 
     .skill-category {
-      background: rgba(96,165,250,0.05);
-      border: 1px solid rgba(96,165,250,0.2);
+      background: rgba(96, 165, 250, 0.05);
+      border: 1px solid rgba(96, 165, 250, 0.2);
       border-radius: 16px;
       padding: 1.5rem;
       transition: all 0.3s ease;
     }
 
     .skill-category:hover {
-      background: rgba(96,165,250,0.1);
+      background: rgba(96, 165, 250, 0.1);
       transform: translateY(-5px);
-      box-shadow: 0 10px 40px rgba(96,165,250,0.2);
+      box-shadow: 0 10px 40px rgba(96, 165, 250, 0.2);
     }
 
     .skill-category h4 {
@@ -360,7 +391,7 @@
     .skill-category li {
       font-size: 0.85rem;
       padding: 0.4rem 0.8rem;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       color: #cbd5e1;
     }
@@ -369,7 +400,7 @@
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(2,6,23,0.92);
+      background: rgba(2, 6, 23, 0.92);
       backdrop-filter: blur(20px);
       display: none;
       align-items: center;
@@ -379,11 +410,13 @@
       overflow-y: auto;
     }
 
-    .modal.show { display: flex; }
+    .modal.show {
+      display: flex;
+    }
 
     .modal-box {
-      background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98));
-      border: 1px solid rgba(96,165,250,0.3);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
+      border: 1px solid rgba(96, 165, 250, 0.3);
       border-radius: 32px;
       padding: 3rem;
       max-width: 900px;
@@ -391,16 +424,23 @@
       max-height: 85vh;
       overflow-y: auto;
       animation: pop 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(96,165,250,0.2);
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(96, 165, 250, 0.2);
       margin: auto;
     }
 
     @keyframes pop {
-      from { transform: scale(0.8) translateY(50px); opacity: 0; }
-      to { transform: scale(1) translateY(0); opacity: 1; }
+      from {
+        transform: scale(0.8) translateY(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
     }
 
-    .modal-box h3 { 
+    .modal-box h3 {
       margin-bottom: 1.5rem;
       font-size: 2rem;
       background: linear-gradient(135deg, #60a5fa, #a78bfa);
@@ -445,7 +485,7 @@
     .modal-section {
       margin-top: 2rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(96,165,250,0.2);
+      border-top: 1px solid rgba(96, 165, 250, 0.2);
     }
 
     .modal-section h4 {
@@ -462,13 +502,13 @@
       color: #60a5fa;
       text-align: center;
       padding: 0.8rem;
-      background: rgba(96,165,250,0.1);
+      background: rgba(96, 165, 250, 0.1);
       border-radius: 12px;
       transition: all 0.3s ease;
     }
 
     .close:hover {
-      background: rgba(96,165,250,0.2);
+      background: rgba(96, 165, 250, 0.2);
       transform: scale(1.02);
     }
 
@@ -502,7 +542,7 @@
       height: 10px;
       border-radius: 50%;
       background: #60a5fa;
-      box-shadow: 0 0 20px rgba(96,165,250,0.5);
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
     }
 
     .timeline-date {
@@ -519,7 +559,7 @@
       color: #64748b;
       text-align: center;
       padding: 2rem 1rem;
-      border-top: 1px solid rgba(96,165,250,0.1);
+      border-top: 1px solid rgba(96, 165, 250, 0.1);
     }
 
     ::-webkit-scrollbar {
@@ -599,810 +639,824 @@
 
 <body>
 
-<canvas id="bg"></canvas>
+  <canvas id="bg"></canvas>
 
-<div class="content">
+  <div class="content">
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="profile">
-      <img src="profile.jpg" alt="Disha Kataria">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="profile">
+        <img src="profile.jpg" alt="Disha Kataria">
+      </div>
+      <div class="hero-text">
+        <h1>Disha Kataria</h1>
+        <div class="tagline">Thinking in Systems.</div>
+        <p class="subtitle">
+          AI & Machine Learning Engineer building enterprise LLM systems, RAG pipelines,
+          and trustworthy ML solutions. Student at K J Somaiya with 9.888 CGPA.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">9.888</div>
+            <div class="stat-label">CGPA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2x</div>
+            <div class="stat-label">Internal SIH</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">78%</div>
+            <div class="stat-label">ML Accuracy</div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="https://github.com/disha802" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="mailto:Disha.kataria@somaiya.edu" aria-label="Email">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card" data-modal="education">
+          <div class="card-header">
+            <div>
+              <h3>B.Tech in AI & Data Science</h3>
+              <p style="color: #60a5fa; margin-bottom: 0.5rem;">K J Somaiya School of Engineering</p>
+              <p>2023 – 2027 | Mumbai</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <span class="stat-badge">🏆 CGPA: 9.888/10.0</span>
+            <span class="stat-badge">📊 Top 5% of Class</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section>
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="card" data-modal="qk">
+          <div class="card-header">
+            <div>
+              <h3>AI Engineering Intern</h3>
+              <p style="color: #60a5fa;">QualityKiosk Technologies</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+          </div>
+          <p>Enterprise LLM systems & RAG pipelines | Summer 2024</p>
+          <div class="card-tags">
+            <span class="tag">LLMs</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Code Gen</span>
+            <span class="tag">60% ↓ Review Time</span>
+          </div>
+        </div>
+        <div class="card" data-modal="french-trainer">
+          <div class="card-header">
+            <div>
+              <h3>French Language Trainer</h3>
+              <p style="color: #60a5fa;">L'Avenir Language Alliance</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="languages"></i>
+            </div>
+          </div>
+          <p>Curriculum development & instruction | 2021-2023</p>
+          <div class="card-tags">
+            <span class="tag">50+ Students</span>
+            <span class="tag">95% Satisfaction</span>
+            <span class="tag">DELF B1</span>
+          </div>
+        </div>
+        <div class="card" data-modal="french-instructor">
+          <div class="card-header">
+            <div>
+              <h3>French Language Instructor</h3>
+              <p style="color: #60a5fa;">Learn French Enligne</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="book-open"></i>
+            </div>
+          </div>
+          <p>International certification coaching | 2024</p>
+          <div class="card-tags">
+            <span class="tag">TEF/TCF/DELF</span>
+            <span class="tag">90% Pass Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card" data-modal="devrev">
+          <div class="card-header">
+            <div>
+              <h3>DevRev Code Quality Evaluator</h3>
+              <p>LLM-based automated code review system</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag">GPT-4</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">Prompt Engineering</span>
+          </div>
+        </div>
+
+        <div class="card" data-modal="campus-chatbot">
+          <div class="card-header">
+            <div>
+              <p>Internal SIH Hackathon 2024</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="message-circle"></i>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag">NLP</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">Real-time</span>
+            <span class="tag">🏆 Internal</span>
+          </div>
+        </div>
+
+        <div class="card" data-modal="mental-health">
+          <div class="card-header">
+            <div>
+              <p>Internal SIH Hackathon 2025 Project</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="heart"></i>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag">GenAI</span>
+            <span class="tag">Sentiment Analysis</span>
+            <span class="tag">Privacy ML</span>
+            <span class="tag">🏆 Internal</span>
+          </div>
+        </div>
+
+        <div class="card" data-modal="nlp">
+          <div class="card-header">
+            <div>
+              <h3>Mann-ki-Baat Analytics</h3>
+              <p>NLP + Stock Prediction Research</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="trending-up"></i>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag">BERT</span>
+            <span class="tag">LDA</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">78% Accuracy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+      <h2>Technical Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Programming</h4>
+          <ul>
+            <li>Python</li>
+            <li>C++</li>
+            <li>C</li>
+            <li>SQL</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>AI/ML Frameworks</h4>
+          <ul>
+            <li>TensorFlow</li>
+            <li>PyTorch</li>
+            <li>scikit-learn</li>
+            <li>Keras</li>
+            <li>Hugging Face</li>
+            <li>LangChain</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>GenAI & NLP</h4>
+          <ul>
+            <li>RAG</li>
+            <li>LLMs</li>
+            <li>Prompt Engineering</li>
+            <li>BERT</li>
+            <li>GPT</li>
+            <li>Vector DBs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h4>Data & Tools</h4>
+          <ul>
+            <li>Pandas</li>
+            <li>NumPy</li>
+            <li>Matplotlib</li>
+            <li>Seaborn</li>
+            <li>MongoDB</li>
+            <li>Git/GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONORS -->
+    <section>
+      <h2>Honors & Certifications</h2>
+      <div class="stats-grid">
+        <span class="stat-badge">🏆 Smart India Hackathon Internal Finalist (2024, 2025)</span>
+        <span class="stat-badge">📜 DELF B1 French (77.5%)</span>
+        <span class="stat-badge">🎓 AI Ethics - University of Michigan</span>
+        <span class="stat-badge">🎨 UX Design - CalArts</span>
+        <span class="stat-badge">📐 Web Design Specialization - CalArts</span>
+        <span class="stat-badge">🖼️ Graphic Design - CalArts</span>
+        <span class="stat-badge">🏛️ Modern Art & Ideas - MoMA</span>
+        <span class="stat-badge">👥 MUN Chairperson 2021</span>
+        <span class="stat-badge">🌍 MUN Delegate 2020</span>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section>
+      <h2>Languages</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>English</h3>
+          <p>Native/Fluent</p>
+          <div style="margin-top: 1rem; display: flex; gap: 0.3rem;">
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>French</h3>
+          <p>DELF B1 Certified (77.5%)</p>
+          <div style="margin-top: 1rem; display: flex; gap: 0.3rem;">
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: rgba(96,165,250,0.3); border-radius: 2px;"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Hindi</h3>
+          <p>Native/Fluent</p>
+          <div style="margin-top: 1rem; display: flex; gap: 0.3rem;">
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p style="margin-bottom: 1rem;">✨ Click cards to explore detailed information</p>
+      <p>© <span id="year"></span> Disha Kataria · Built with passion for AI & Systems Thinking</p>
+    </footer>
+
+  </div>
+
+  <!-- MODALS -->
+  <div class="modal" id="modal-education">
+    <div class="modal-box">
+      <h3>Education Journey</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2023 – 2027</div>
+          <h4>B.Tech in Artificial Intelligence & Data Science</h4>
+          <p style="color: #60a5fa; margin-bottom: 0.5rem;">K J Somaiya School of Engineering, Mumbai</p>
+          <ul>
+            <li><strong>CGPA: 9.87/10.0</strong> - Top 5% of class</li>
+            <li>Dean's List recipient for all semesters</li>
+            <li>Relevant Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures & Algorithms
+            </li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2021 – 2023</div>
+          <h4>Higher Secondary Certificate (HSC)</h4>
+          <p style="color: #60a5fa; margin-bottom: 0.5rem;">PACE Junior Science College, Mumbai</p>
+          <ul>
+            <li>Percentage: 76.33%</li>
+            <li>JEE Mains: 90.29 percentile</li>
+            <li>Overall Performance: 93 percentile</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2021</div>
+          <h4>IGCSE Secondary Education</h4>
+          <p style="color: #60a5fa; margin-bottom: 0.5rem;">Universal School, Ghatkopar, Mumbai</p>
+          <ul>
+            <li>Score: 90.29%</li>
+            <li>Strong foundation in sciences and mathematics</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="close">Press Esc or click outside to close</div>
     </div>
-    <div class="hero-text">
-      <h1>Disha Kataria</h1>
-      <div class="tagline">Thinking in Systems.</div>
-      <p class="subtitle">
-        AI & Machine Learning Engineer building enterprise LLM systems, RAG pipelines, 
-        and trustworthy ML solutions. Student at K J Somaiya with 9.87 CGPA.
+  </div>
+
+  <div class="modal" id="modal-devrev">
+    <div class="modal-box">
+      <h3>DevRev Code Quality Evaluator</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        An AI-powered code evaluation system designed to automate code review processes
+        while adhering to DevRev's strict coding standards and best practices.
       </p>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">9.87</div>
-          <div class="stat-label">CGPA</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">2x</div>
-          <div class="stat-label">National Finalist</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">78%</div>
-          <div class="stat-label">ML Accuracy</div>
-        </div>
-      </div>
-      <div class="socials">
-        <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i data-lucide="linkedin"></i>
-        </a>
-        <a href="https://github.com/disha802" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i data-lucide="github"></i>
-        </a>
-        <a href="mailto:Disha.kataria@somaiya.edu" aria-label="Email">
-          <i data-lucide="mail"></i>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- EDUCATION -->
-  <section>
-    <h2>Education</h2>
-    <div class="grid">
-      <div class="card" data-modal="education">
-        <div class="card-header">
-          <div>
-            <h3>B.Tech in AI & Data Science</h3>
-            <p style="color: #60a5fa; margin-bottom: 0.5rem;">K J Somaiya School of Engineering</p>
-            <p>2023 – 2027 | Mumbai</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="graduation-cap"></i>
-          </div>
-        </div>
-        <div class="stats-grid">
-          <span class="stat-badge">🏆 CGPA: 9.87/10.0</span>
-          <span class="stat-badge">📊 Top 5% of Class</span>
-        </div>
+      <div class="modal-section">
+        <h4>Key Features</h4>
+        <ul>
+          <li>Designed comprehensive AI-powered code evaluation system aligned with DevRev coding standards</li>
+          <li>Implemented GPT-4 based models with sophisticated custom prompt engineering for accurate assessments</li>
+          <li>Built Retrieval-Augmented Generation (RAG) pipeline for contextual evaluation using organization-specific
+            knowledge</li>
+          <li>Automated feedback generation covering readability, security vulnerabilities, and performance
+            optimizations</li>
+        </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section>
-    <h2>Experience</h2>
-    <div class="grid">
-      <div class="card" data-modal="qk">
-        <div class="card-header">
-          <div>
-            <h3>AI Engineering Intern</h3>
-            <p style="color: #60a5fa;">QualityKiosk Technologies</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="briefcase"></i>
-          </div>
-        </div>
-        <p>Enterprise LLM systems & RAG pipelines | Summer 2024</p>
+      <div class="modal-section">
+        <h4>Technical Stack</h4>
         <div class="card-tags">
-          <span class="tag">LLMs</span>
-          <span class="tag">RAG</span>
-          <span class="tag">Code Gen</span>
-          <span class="tag">60% ↓ Review Time</span>
-        </div>
-      </div>
-      <div class="card" data-modal="french-trainer">
-        <div class="card-header">
-          <div>
-            <h3>French Language Trainer</h3>
-            <p style="color: #60a5fa;">L'Avenir Language Alliance</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="languages"></i>
-          </div>
-        </div>
-        <p>Curriculum development & instruction | 2021-2023</p>
-        <div class="card-tags">
-          <span class="tag">50+ Students</span>
-          <span class="tag">95% Satisfaction</span>
-          <span class="tag">DELF B1</span>
-        </div>
-      </div>
-      <div class="card" data-modal="french-instructor">
-        <div class="card-header">
-          <div>
-            <h3>French Language Instructor</h3>
-            <p style="color: #60a5fa;">Learn French Enligne</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="book-open"></i>
-          </div>
-        </div>
-        <p>International certification coaching | 2024</p>
-        <div class="card-tags">
-          <span class="tag">TEF/TCF/DELF</span>
-          <span class="tag">90% Pass Rate</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card" data-modal="devrev">
-        <div class="card-header">
-          <div>
-            <h3>DevRev Code Quality Evaluator</h3>
-            <p>LLM-based automated code review system</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="code-2"></i>
-          </div>
-        </div>
-        <div class="card-tags">
+          <span class="tag">Python</span>
           <span class="tag">GPT-4</span>
-          <span class="tag">RAG</span>
           <span class="tag">LangChain</span>
+          <span class="tag">RAG Architecture</span>
           <span class="tag">Prompt Engineering</span>
+          <span class="tag">Vector Databases</span>
         </div>
       </div>
 
-      <div class="card" data-modal="campus-chatbot">
-        <div class="card-header">
-          <div>
-            <h3>Intelligent Campus Assistant</h3>
-            <p>Smart India Hackathon 2024 National Finalist</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="message-circle"></i>
-          </div>
+      <div class="modal-section">
+        <h4>Impact</h4>
+        <ul>
+          <li>Significantly improved code quality consistency across development teams</li>
+          <li>Reduced manual review overhead by providing instant preliminary assessments</li>
+          <li>Enhanced developer productivity through actionable, context-aware feedback</li>
+        </ul>
+      </div>
+
+      <div class="close">Press Esc or click outside to close</div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-qk">
+    <div class="modal-box">
+      <h3>AI Engineering Intern – QualityKiosk Technologies</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <strong>Summer 2024 | Mumbai, India</strong><br>
+        Developed cutting-edge enterprise AI solutions for automated code generation and quality assessment.
+      </p>
+
+      <div class="modal-section">
+        <h4>Key Responsibilities & Achievements</h4>
+        <ul>
+          <li>Built enterprise-grade AI code generator and evaluator using state-of-the-art Large Language Models (LLMs)
+          </li>
+          <li>Designed and implemented RAG (Retrieval-Augmented Generation) pipelines to inject organization-specific
+            knowledge into AI systems</li>
+          <li>Reduced manual code review effort by approximately 60% through intelligent automation</li>
+          <li>Collaborated with cross-functional teams including developers, QA, and product managers for seamless
+            production integration</li>
+          <li>Optimized prompt engineering strategies to improve code generation quality and relevance</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technologies Used</h4>
+        <div class="card-tags">
+          <span class="tag">Large Language Models</span>
+          <span class="tag">RAG Architecture</span>
+          <span class="tag">Python</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">Vector Databases</span>
+          <span class="tag">Enterprise Integration</span>
         </div>
+      </div>
+
+      <div class="modal-section">
+        <h4>Business Impact</h4>
+        <ul>
+          <li>Accelerated development cycles through automated code review processes</li>
+          <li>Improved code quality consistency across large development teams</li>
+          <li>Enabled knowledge sharing through RAG-based organizational memory systems</li>
+        </ul>
+      </div>
+
+      <div class="close">Press Esc or click outside to close</div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-campus-chatbot">
+    <div class="modal-box">
+      <h3>Intelligent Campus Assistant Chatbot</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <strong>Internal SIH Hackathon - 2024 Finalist 🏆</strong><br>
+        A conversational AI system designed to revolutionize campus query resolution and student support services.
+      </p>
+
+      <div class="modal-section">
+        <h4>Project Overview</h4>
+        <ul>
+          <li>Built intelligent conversational AI chatbot using advanced NLP and transformer models</li>
+          <li>Implemented real-time campus query resolution for academic, administrative, and facility-related questions
+          </li>
+          <li>Advanced to national-level competition after successfully clearing institutional rounds</li>
+          <li>Designed to handle multiple query types simultaneously with context retention</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technical Implementation</h4>
+        <ul>
+          <li>Leveraged transformer architecture for natural language understanding</li>
+          <li>Integrated intent classification and entity recognition systems</li>
+          <li>Built custom knowledge base covering campus-specific information</li>
+          <li>Implemented multi-turn conversation handling with context management</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technology Stack</h4>
         <div class="card-tags">
           <span class="tag">NLP</span>
           <span class="tag">Transformers</span>
-          <span class="tag">Real-time</span>
-          <span class="tag">🏆 National</span>
+          <span class="tag">Python</span>
+          <span class="tag">Real-time Processing</span>
+          <span class="tag">Intent Classification</span>
+          <span class="tag">Knowledge Base</span>
         </div>
       </div>
 
-      <div class="card" data-modal="mental-health">
-        <div class="card-header">
-          <div>
-            <h3>Mental Health Support Platform</h3>
-            <p>Smart India Hackathon 2025 Project</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="heart"></i>
-          </div>
-        </div>
+      <div class="close">Press Esc or click outside to close</div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-mental-health">
+    <div class="modal-box">
+      <h3>Mental Health Support Platform</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <strong>Internal SIH Hackathon - 2025 Finalist 🏆</strong><br>
+        An AI-driven mental health support system focused on student wellbeing, stress detection, and personalized
+        interventions.
+      </p>
+
+      <div class="modal-section">
+        <h4>Project Vision</h4>
+        <ul>
+          <li>Developing comprehensive AI-driven mental health support system for students</li>
+          <li>Implementing advanced sentiment analysis to detect emotional states and stress levels</li>
+          <li>Creating personalized intervention strategies based on individual mental health patterns</li>
+          <li>Building privacy-preserving ML models that protect sensitive student data</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Key Features</h4>
+        <ul>
+          <li>Real-time stress detection using behavioral and linguistic cues</li>
+          <li>Personalized wellness recommendations and coping strategies</li>
+          <li>Anonymous tracking ensuring student privacy and data security</li>
+          <li>Integration with campus counseling resources for critical cases</li>
+          <li>Longitudinal tracking of mental health trends and patterns</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technical Approach</h4>
+        <ul>
+          <li>Privacy-first architecture with on-device processing where possible</li>
+          <li>Sentiment analysis using fine-tuned transformer models</li>
+          <li>Ethical AI design prioritizing user wellbeing over engagement metrics</li>
+          <li>Federated learning techniques to maintain data privacy</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technology Stack</h4>
         <div class="card-tags">
-          <span class="tag">GenAI</span>
+          <span class="tag">Generative AI</span>
           <span class="tag">Sentiment Analysis</span>
           <span class="tag">Privacy ML</span>
-          <span class="tag">🏆 National</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Ethical AI</span>
+          <span class="tag">Student Wellness</span>
         </div>
       </div>
 
-      <div class="card" data-modal="nlp">
-        <div class="card-header">
-          <div>
-            <h3>Mann-ki-Baat Analytics</h3>
-            <p>NLP + Stock Prediction Research</p>
-          </div>
-          <div class="card-icon">
-            <i data-lucide="trending-up"></i>
-          </div>
-        </div>
+      <div class="close">Press Esc or click outside to close</div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-nlp">
+    <div class="modal-box">
+      <h3>Mann-ki-Baat Analytics & Stock Prediction</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <strong>November 2025 | Research Project</strong><br>
+        A sophisticated NLP and time-series analysis project correlating policy announcements with market movements to
+        predict sectoral stock trends.
+      </p>
+
+      <div class="modal-section">
+        <h4>Research Objectives</h4>
+        <ul>
+          <li>Perform comprehensive sentiment analysis and topic modeling on Prime Minister's Mann-ki-Baat speeches</li>
+          <li>Analyze correlations between policy sentiment and subsequent market movements</li>
+          <li>Build predictive models for sectoral stock trends based on policy announcements</li>
+          <li>Achieve 78% accuracy in identifying policy-driven market impacts</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Methodology</h4>
+        <ul>
+          <li><strong>NLP Analysis:</strong> Used BERT (Bidirectional Encoder Representations from Transformers) for
+            deep contextual understanding of policy speeches</li>
+          <li><strong>Topic Modeling:</strong> Applied Latent Dirichlet Allocation (LDA) to extract key policy themes
+            and priorities</li>
+          <li><strong>Sentiment Extraction:</strong> Quantified positive/negative sentiment around specific sectors
+            mentioned in speeches</li>
+          <li><strong>Time Series Analysis:</strong> Correlated sentiment metrics with stock market data across multiple
+            time windows</li>
+          <li><strong>Predictive Modeling:</strong> Built ensemble models combining NLP features with traditional
+            financial indicators</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Key Findings</h4>
+        <ul>
+          <li>Strong correlation between positive policy mentions and short-term sectoral rallies</li>
+          <li>Achieved 78% accuracy in predicting market direction for policy-affected sectors</li>
+          <li>Identified lag patterns between policy announcements and market responses</li>
+          <li>Discovered sector-specific sensitivity to policy sentiment</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technology Stack</h4>
         <div class="card-tags">
           <span class="tag">BERT</span>
           <span class="tag">LDA</span>
-          <span class="tag">Time Series</span>
-          <span class="tag">78% Accuracy</span>
+          <span class="tag">Python</span>
+          <span class="tag">Time Series Analysis</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Sentiment Analysis</span>
+          <span class="tag">Predictive Modeling</span>
+          <span class="tag">Financial Data</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- TECHNICAL SKILLS -->
-  <section>
-    <h2>Technical Arsenal</h2>
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h4>Programming</h4>
-        <ul>
-          <li>Python</li>
-          <li>C++</li>
-          <li>C</li>
-          <li>SQL</li>
-          <li>JavaScript</li>
-          <li>HTML/CSS</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>AI/ML Frameworks</h4>
-        <ul>
-          <li>TensorFlow</li>
-          <li>PyTorch</li>
-          <li>scikit-learn</li>
-          <li>Keras</li>
-          <li>Hugging Face</li>
-          <li>LangChain</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>GenAI & NLP</h4>
-        <ul>
-          <li>RAG</li>
-          <li>LLMs</li>
-          <li>Prompt Engineering</li>
-          <li>BERT</li>
-          <li>GPT</li>
-          <li>Vector DBs</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h4>Data & Tools</h4>
-        <ul>
-          <li>Pandas</li>
-          <li>NumPy</li>
-          <li>Matplotlib</li>
-          <li>Seaborn</li>
-          <li>MongoDB</li>
-          <li>Git/GitHub</li>
-        </ul>
-      </div>
+      <div class="close">Press Esc or click outside to close</div>
     </div>
-  </section>
+  </div>
 
-  <!-- HONORS -->
-  <section>
-    <h2>Honors & Certifications</h2>
-    <div class="stats-grid">
-      <span class="stat-badge">🏆 Smart India Hackathon Internal Finalist (2024, 2025)</span>
-      <span class="stat-badge">📜 DELF B1 French (77.5%)</span>
-      <span class="stat-badge">🎓 AI Ethics - University of Michigan</span>
-      <span class="stat-badge">🎨 UX Design - CalArts</span>
-      <span class="stat-badge">📐 Web Design Specialization - CalArts</span>
-      <span class="stat-badge">🖼️ Graphic Design - CalArts</span>
-      <span class="stat-badge">🏛️ Modern Art & Ideas - MoMA</span>
-      <span class="stat-badge">👥 MUN Chairperson 2021</span>
-      <span class="stat-badge">🌍 MUN Delegate 2020</span>
-    </div>
-  </section>
+  <div class="modal" id="modal-french-trainer">
+    <div class="modal-box">
+      <h3>French Language Trainer & Curriculum Developer</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <strong>L'Avenir Language Alliance | 2021 – 2023 | Remote</strong><br>
+        Designed and delivered comprehensive French language curriculum for young learners with outstanding results.
+      </p>
 
-  <!-- LANGUAGES -->
-  <section>
-    <h2>Languages</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>English</h3>
-        <p>Native/Fluent</p>
-        <div style="margin-top: 1rem; display: flex; gap: 0.3rem;">
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
+      <div class="modal-section">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li>Designed and delivered French curriculum for 50+ students aged 4-14 years</li>
+          <li>Achieved 95% student satisfaction rate through engaging teaching methods</li>
+          <li>Created interactive digital learning resources tailored to different age groups</li>
+          <li>Developed comprehensive assessment frameworks to track student progress</li>
+          <li>Adapted teaching methodologies for remote learning environment</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Curriculum Development</h4>
+        <ul>
+          <li>Age-appropriate lesson plans covering grammar, vocabulary, and conversation</li>
+          <li>Interactive digital content including games, quizzes, and multimedia materials</li>
+          <li>Progressive difficulty levels aligned with DELF certification standards</li>
+          <li>Cultural immersion activities to enhance language learning experience</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Skills Developed</h4>
+        <div class="card-tags">
+          <span class="tag">Curriculum Design</span>
+          <span class="tag">Pedagogy</span>
+          <span class="tag">Remote Teaching</span>
+          <span class="tag">Assessment Design</span>
+          <span class="tag">French B1</span>
+          <span class="tag">Communication</span>
         </div>
       </div>
-      <div class="card">
-        <h3>French</h3>
-        <p>DELF B1 Certified (77.5%)</p>
-        <div style="margin-top: 1rem; display: flex; gap: 0.3rem;">
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: rgba(96,165,250,0.3); border-radius: 2px;"></div>
+
+      <div class="close">Press Esc or click outside to close</div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-french-instructor">
+    <div class="modal-box">
+      <h3>French Language Instructor</h3>
+      <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <strong>Learn French Enligne | 2024 | Remote</strong><br>
+        Specialized in coaching students for international French language certifications with excellent pass rates.
+      </p>
+
+      <div class="modal-section">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li>Coached students for TEF, TCF, and DELF international certifications</li>
+          <li>Achieved 90% pass rate across all certification levels</li>
+          <li>Enhanced verbal and written communication skills through personalized learning plans</li>
+          <li>Provided targeted exam preparation strategies for each certification type</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Teaching Approach</h4>
+        <ul>
+          <li>Personalized learning plans based on individual student needs and goals</li>
+          <li>Focus on practical language skills for real-world communication</li>
+          <li>Exam-specific strategies for TEF, TCF, and DELF certifications</li>
+          <li>Regular progress assessments and feedback sessions</li>
+          <li>Integration of French culture and current events in lessons</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Certifications Coached</h4>
+        <div class="card-tags">
+          <span class="tag">TEF</span>
+          <span class="tag">TCF</span>
+          <span class="tag">DELF</span>
+          <span class="tag">90% Pass Rate</span>
         </div>
       </div>
-      <div class="card">
-        <h3>Hindi</h3>
-        <p>Native/Fluent</p>
-        <div style="margin-top: 1rem; display: flex; gap: 0.3rem;">
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-          <div style="width: 30px; height: 4px; background: #60a5fa; border-radius: 2px;"></div>
-        </div>
-      </div>
+
+      <div class="close">Press Esc or click outside to close</div>
     </div>
-  </section>
-
-  <footer>
-    <p style="margin-bottom: 1rem;">✨ Click cards to explore detailed information</p>
-    <p>© <span id="year"></span> Disha Kataria · Built with passion for AI & Systems Thinking</p>
-  </footer>
-
-</div>
-
-<!-- MODALS -->
-<div class="modal" id="modal-education">
-  <div class="modal-box">
-    <h3>Education Journey</h3>
-    
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">2023 – 2027</div>
-        <h4>B.Tech in Artificial Intelligence & Data Science</h4>
-        <p style="color: #60a5fa; margin-bottom: 0.5rem;">K J Somaiya School of Engineering, Mumbai</p>
-        <ul>
-          <li><strong>CGPA: 9.87/10.0</strong> - Top 5% of class</li>
-          <li>Dean's List recipient for all semesters</li>
-          <li>Relevant Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures & Algorithms</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2021 – 2023</div>
-        <h4>Higher Secondary Certificate (HSC)</h4>
-        <p style="color: #60a5fa; margin-bottom: 0.5rem;">PACE Junior Science College, Mumbai</p>
-        <ul>
-          <li>Percentage: 76.33%</li>
-          <li>JEE Mains: 90.29 percentile</li>
-          <li>Overall Performance: 93 percentile</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">2021</div>
-        <h4>IGCSE Secondary Education</h4>
-        <p style="color: #60a5fa; margin-bottom: 0.5rem;">Universal School, Ghatkopar, Mumbai</p>
-        <ul>
-          <li>Score: 90.29%</li>
-          <li>Strong foundation in sciences and mathematics</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="close">Press Esc or click outside to close</div>
   </div>
-</div>
 
-<div class="modal" id="modal-devrev">
-  <div class="modal-box">
-    <h3>DevRev Code Quality Evaluator</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      An AI-powered code evaluation system designed to automate code review processes 
-      while adhering to DevRev's strict coding standards and best practices.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Key Features</h4>
-      <ul>
-        <li>Designed comprehensive AI-powered code evaluation system aligned with DevRev coding standards</li>
-        <li>Implemented GPT-4 based models with sophisticated custom prompt engineering for accurate assessments</li>
-        <li>Built Retrieval-Augmented Generation (RAG) pipeline for contextual evaluation using organization-specific knowledge</li>
-        <li>Automated feedback generation covering readability, security vulnerabilities, and performance optimizations</li>
-      </ul>
-    </div>
+  <script>
+    lucide.createIcons();
 
-    <div class="modal-section">
-      <h4>Technical Stack</h4>
-      <div class="card-tags">
-        <span class="tag">Python</span>
-        <span class="tag">GPT-4</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">RAG Architecture</span>
-        <span class="tag">Prompt Engineering</span>
-        <span class="tag">Vector Databases</span>
-      </div>
-    </div>
+    // PARTICLES with enhanced visual effects
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
 
-    <div class="modal-section">
-      <h4>Impact</h4>
-      <ul>
-        <li>Significantly improved code quality consistency across development teams</li>
-        <li>Reduced manual review overhead by providing instant preliminary assessments</li>
-        <li>Enhanced developer productivity through actionable, context-aware feedback</li>
-      </ul>
-    </div>
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
 
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
+    window.addEventListener("resize", resize);
+    resize();
 
-<div class="modal" id="modal-qk">
-  <div class="modal-box">
-    <h3>AI Engineering Intern – QualityKiosk Technologies</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      <strong>Summer 2024 | Mumbai, India</strong><br>
-      Developed cutting-edge enterprise AI solutions for automated code generation and quality assessment.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Key Responsibilities & Achievements</h4>
-      <ul>
-        <li>Built enterprise-grade AI code generator and evaluator using state-of-the-art Large Language Models (LLMs)</li>
-        <li>Designed and implemented RAG (Retrieval-Augmented Generation) pipelines to inject organization-specific knowledge into AI systems</li>
-        <li>Reduced manual code review effort by approximately 60% through intelligent automation</li>
-        <li>Collaborated with cross-functional teams including developers, QA, and product managers for seamless production integration</li>
-        <li>Optimized prompt engineering strategies to improve code generation quality and relevance</li>
-      </ul>
-    </div>
+    const particles = Array.from({ length: 200 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      opacity: Math.random() * 0.5 + 0.3
+    }));
 
-    <div class="modal-section">
-      <h4>Technologies Used</h4>
-      <div class="card-tags">
-        <span class="tag">Large Language Models</span>
-        <span class="tag">RAG Architecture</span>
-        <span class="tag">Python</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">Vector Databases</span>
-        <span class="tag">Enterprise Integration</span>
-      </div>
-    </div>
+    let mouse = { x: 0, y: 0 };
 
-    <div class="modal-section">
-      <h4>Business Impact</h4>
-      <ul>
-        <li>Accelerated development cycles through automated code review processes</li>
-        <li>Improved code quality consistency across large development teams</li>
-        <li>Enabled knowledge sharing through RAG-based organizational memory systems</li>
-      </ul>
-    </div>
+    canvas.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
 
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-<div class="modal" id="modal-campus-chatbot">
-  <div class="modal-box">
-    <h3>Intelligent Campus Assistant Chatbot</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      <strong>Smart India Hackathon 2024 - National Finalist 🏆</strong><br>
-      A conversational AI system designed to revolutionize campus query resolution and student support services.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Project Overview</h4>
-      <ul>
-        <li>Built intelligent conversational AI chatbot using advanced NLP and transformer models</li>
-        <li>Implemented real-time campus query resolution for academic, administrative, and facility-related questions</li>
-        <li>Advanced to national-level competition after successfully clearing institutional rounds</li>
-        <li>Designed to handle multiple query types simultaneously with context retention</li>
-      </ul>
-    </div>
+      particles.forEach((p, i) => {
+        // Mouse interaction
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
 
-    <div class="modal-section">
-      <h4>Technical Implementation</h4>
-      <ul>
-        <li>Leveraged transformer architecture for natural language understanding</li>
-        <li>Integrated intent classification and entity recognition systems</li>
-        <li>Built custom knowledge base covering campus-specific information</li>
-        <li>Implemented multi-turn conversation handling with context management</li>
-      </ul>
-    </div>
+        if (dist < 150) {
+          const force = (150 - dist) / 150;
+          p.vx -= (dx / dist) * force * 0.2;
+          p.vy -= (dy / dist) * force * 0.2;
+        }
 
-    <div class="modal-section">
-      <h4>Technology Stack</h4>
-      <div class="card-tags">
-        <span class="tag">NLP</span>
-        <span class="tag">Transformers</span>
-        <span class="tag">Python</span>
-        <span class="tag">Real-time Processing</span>
-        <span class="tag">Intent Classification</span>
-        <span class="tag">Knowledge Base</span>
-      </div>
-    </div>
+        p.x += p.vx;
+        p.y += p.vy;
 
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
+        // Damping
+        p.vx *= 0.99;
+        p.vy *= 0.99;
 
-<div class="modal" id="modal-mental-health">
-  <div class="modal-box">
-    <h3>Mental Health Support Platform</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      <strong>Smart India Hackathon 2025 - National Finalist 🏆</strong><br>
-      An AI-driven mental health support system focused on student wellbeing, stress detection, and personalized interventions.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Project Vision</h4>
-      <ul>
-        <li>Developing comprehensive AI-driven mental health support system for students</li>
-        <li>Implementing advanced sentiment analysis to detect emotional states and stress levels</li>
-        <li>Creating personalized intervention strategies based on individual mental health patterns</li>
-        <li>Building privacy-preserving ML models that protect sensitive student data</li>
-      </ul>
-    </div>
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-    <div class="modal-section">
-      <h4>Key Features</h4>
-      <ul>
-        <li>Real-time stress detection using behavioral and linguistic cues</li>
-        <li>Personalized wellness recommendations and coping strategies</li>
-        <li>Anonymous tracking ensuring student privacy and data security</li>
-        <li>Integration with campus counseling resources for critical cases</li>
-        <li>Longitudinal tracking of mental health trends and patterns</li>
-      </ul>
-    </div>
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(96,165,250,${p.opacity})`;
+        ctx.fill();
 
-    <div class="modal-section">
-      <h4>Technical Approach</h4>
-      <ul>
-        <li>Privacy-first architecture with on-device processing where possible</li>
-        <li>Sentiment analysis using fine-tuned transformer models</li>
-        <li>Ethical AI design prioritizing user wellbeing over engagement metrics</li>
-        <li>Federated learning techniques to maintain data privacy</li>
-      </ul>
-    </div>
+        // Draw connections
+        particles.slice(i + 1).forEach(p2 => {
+          const d = Math.hypot(p2.x - p.x, p2.y - p.y);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(96,165,250,${(1 - d / 120) * 0.15})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
 
-    <div class="modal-section">
-      <h4>Technology Stack</h4>
-      <div class="card-tags">
-        <span class="tag">Generative AI</span>
-        <span class="tag">Sentiment Analysis</span>
-        <span class="tag">Privacy ML</span>
-        <span class="tag">NLP</span>
-        <span class="tag">Ethical AI</span>
-        <span class="tag">Student Wellness</span>
-      </div>
-    </div>
+      requestAnimationFrame(animate);
+    }
 
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
+    animate();
 
-<div class="modal" id="modal-nlp">
-  <div class="modal-box">
-    <h3>Mann-ki-Baat Analytics & Stock Prediction</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      <strong>November 2025 | Research Project</strong><br>
-      A sophisticated NLP and time-series analysis project correlating policy announcements with market movements to predict sectoral stock trends.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Research Objectives</h4>
-      <ul>
-        <li>Perform comprehensive sentiment analysis and topic modeling on Prime Minister's Mann-ki-Baat speeches</li>
-        <li>Analyze correlations between policy sentiment and subsequent market movements</li>
-        <li>Build predictive models for sectoral stock trends based on policy announcements</li>
-        <li>Achieve 78% accuracy in identifying policy-driven market impacts</li>
-      </ul>
-    </div>
+    // MODAL LOGIC
+    const cards = document.querySelectorAll(".card");
+    const modals = document.querySelectorAll(".modal");
 
-    <div class="modal-section">
-      <h4>Methodology</h4>
-      <ul>
-        <li><strong>NLP Analysis:</strong> Used BERT (Bidirectional Encoder Representations from Transformers) for deep contextual understanding of policy speeches</li>
-        <li><strong>Topic Modeling:</strong> Applied Latent Dirichlet Allocation (LDA) to extract key policy themes and priorities</li>
-        <li><strong>Sentiment Extraction:</strong> Quantified positive/negative sentiment around specific sectors mentioned in speeches</li>
-        <li><strong>Time Series Analysis:</strong> Correlated sentiment metrics with stock market data across multiple time windows</li>
-        <li><strong>Predictive Modeling:</strong> Built ensemble models combining NLP features with traditional financial indicators</li>
-      </ul>
-    </div>
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        card.classList.add("punk");
+        setTimeout(() => card.classList.remove("punk"), 500);
 
-    <div class="modal-section">
-      <h4>Key Findings</h4>
-      <ul>
-        <li>Strong correlation between positive policy mentions and short-term sectoral rallies</li>
-        <li>Achieved 78% accuracy in predicting market direction for policy-affected sectors</li>
-        <li>Identified lag patterns between policy announcements and market responses</li>
-        <li>Discovered sector-specific sensitivity to policy sentiment</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Technology Stack</h4>
-      <div class="card-tags">
-        <span class="tag">BERT</span>
-        <span class="tag">LDA</span>
-        <span class="tag">Python</span>
-        <span class="tag">Time Series Analysis</span>
-        <span class="tag">NLP</span>
-        <span class="tag">Sentiment Analysis</span>
-        <span class="tag">Predictive Modeling</span>
-        <span class="tag">Financial Data</span>
-      </div>
-    </div>
-
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
-
-<div class="modal" id="modal-french-trainer">
-  <div class="modal-box">
-    <h3>French Language Trainer & Curriculum Developer</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      <strong>L'Avenir Language Alliance | 2021 – 2023 | Remote</strong><br>
-      Designed and delivered comprehensive French language curriculum for young learners with outstanding results.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Key Achievements</h4>
-      <ul>
-        <li>Designed and delivered French curriculum for 50+ students aged 4-14 years</li>
-        <li>Achieved 95% student satisfaction rate through engaging teaching methods</li>
-        <li>Created interactive digital learning resources tailored to different age groups</li>
-        <li>Developed comprehensive assessment frameworks to track student progress</li>
-        <li>Adapted teaching methodologies for remote learning environment</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Curriculum Development</h4>
-      <ul>
-        <li>Age-appropriate lesson plans covering grammar, vocabulary, and conversation</li>
-        <li>Interactive digital content including games, quizzes, and multimedia materials</li>
-        <li>Progressive difficulty levels aligned with DELF certification standards</li>
-        <li>Cultural immersion activities to enhance language learning experience</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Skills Developed</h4>
-      <div class="card-tags">
-        <span class="tag">Curriculum Design</span>
-        <span class="tag">Pedagogy</span>
-        <span class="tag">Remote Teaching</span>
-        <span class="tag">Assessment Design</span>
-        <span class="tag">French B1</span>
-        <span class="tag">Communication</span>
-      </div>
-    </div>
-
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
-
-<div class="modal" id="modal-french-instructor">
-  <div class="modal-box">
-    <h3>French Language Instructor</h3>
-    <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
-      <strong>Learn French Enligne | 2024 | Remote</strong><br>
-      Specialized in coaching students for international French language certifications with excellent pass rates.
-    </p>
-    
-    <div class="modal-section">
-      <h4>Key Achievements</h4>
-      <ul>
-        <li>Coached students for TEF, TCF, and DELF international certifications</li>
-        <li>Achieved 90% pass rate across all certification levels</li>
-        <li>Enhanced verbal and written communication skills through personalized learning plans</li>
-        <li>Provided targeted exam preparation strategies for each certification type</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Teaching Approach</h4>
-      <ul>
-        <li>Personalized learning plans based on individual student needs and goals</li>
-        <li>Focus on practical language skills for real-world communication</li>
-        <li>Exam-specific strategies for TEF, TCF, and DELF certifications</li>
-        <li>Regular progress assessments and feedback sessions</li>
-        <li>Integration of French culture and current events in lessons</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <h4>Certifications Coached</h4>
-      <div class="card-tags">
-        <span class="tag">TEF</span>
-        <span class="tag">TCF</span>
-        <span class="tag">DELF</span>
-        <span class="tag">90% Pass Rate</span>
-      </div>
-    </div>
-
-    <div class="close">Press Esc or click outside to close</div>
-  </div>
-</div>
-
-<script>
-  lucide.createIcons();
-
-  // PARTICLES with enhanced visual effects
-  const canvas = document.getElementById("bg");
-  const ctx = canvas.getContext("2d");
-  
-  function resize(){ 
-    canvas.width = window.innerWidth; 
-    canvas.height = window.innerHeight; 
-  }
-  
-  window.addEventListener("resize", resize); 
-  resize();
-
-  const particles = Array.from({length:200},()=>({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2.5 + 0.5,
-    vx: (Math.random() - 0.5) * 0.4,
-    vy: (Math.random() - 0.5) * 0.4,
-    opacity: Math.random() * 0.5 + 0.3
-  }));
-
-  let mouse = {x: 0, y: 0};
-  
-  canvas.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  function animate(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    particles.forEach((p, i) => {
-      // Mouse interaction
-      const dx = mouse.x - p.x;
-      const dy = mouse.y - p.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      
-      if(dist < 150) {
-        const force = (150 - dist) / 150;
-        p.vx -= (dx / dist) * force * 0.2;
-        p.vy -= (dy / dist) * force * 0.2;
-      }
-      
-      p.x += p.vx; 
-      p.y += p.vy;
-      
-      // Damping
-      p.vx *= 0.99;
-      p.vy *= 0.99;
-      
-      if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
-      
-      // Draw particle
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(96,165,250,${p.opacity})`;
-      ctx.fill();
-      
-      // Draw connections
-      particles.slice(i + 1).forEach(p2 => {
-        const d = Math.hypot(p2.x - p.x, p2.y - p.y);
-        if(d < 120){
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(96,165,250,${(1 - d / 120) * 0.15})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
+        const id = card.dataset.modal;
+        if (id) {
+          document.getElementById(`modal-${id}`).classList.add("show");
         }
       });
     });
-    
-    requestAnimationFrame(animate);
-  }
-  
-  animate();
 
-  // MODAL LOGIC
-  const cards = document.querySelectorAll(".card");
-  const modals = document.querySelectorAll(".modal");
+    modals.forEach(m => {
+      m.addEventListener("click", e => {
+        if (e.target === m) {
+          m.classList.remove("show");
+        }
+      });
+    });
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.add("punk");
-      setTimeout(() => card.classList.remove("punk"), 500);
-
-      const id = card.dataset.modal;
-      if(id) {
-        document.getElementById(`modal-${id}`).classList.add("show");
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        modals.forEach(m => m.classList.remove("show"));
       }
     });
-  });
 
-  modals.forEach(m => {
-    m.addEventListener("click", e => {
-      if (e.target === m) {
-        m.classList.remove("show");
-      }
-    });
-  });
-
-  document.addEventListener("keydown", e => {
-    if (e.key === "Escape") {
-      modals.forEach(m => m.classList.remove("show"));
-    }
-  });
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
+
 </html>
