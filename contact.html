@@ -53,7 +53,7 @@
 
                 <div class="contact-form-container"
                     style="margin-top: 3rem; background: rgba(96,165,250,0.05); padding: 2rem; border-radius: 20px; border: 1px solid rgba(96,165,250,0.2);">
-                    <form action="https://formspree.io/f/disha.m.kataria@gmail.com" method="POST" id="contact-form">
+                    <form action="https://formspree.io/disha.m.kataria@gmail.com" method="POST">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                             <div class="form-group">
                                 <label for="name"
@@ -88,39 +88,8 @@
                     <p style="margin-top: 0.5rem;">Based in Mumbai, India 🇮🇳</p>
                 </div>
 
-                <script>
-                    const form = document.getElementById('contact-form');
-                    const status = document.getElementById('form-status');
-
-                    form.onsubmit = async (e) => {
-                        e.preventDefault();
-                        const data = new FormData(form);
-                        status.style.display = 'block';
-                        status.style.color = '#60a5fa';
-                        status.innerHTML = 'Sending...';
-
-                        try {
-                            const response = await fetch(form.action, {
-                                method: form.method,
-                                body: data,
-                                headers: { 'Accept': 'application/json' }
-                            });
-
-                            if (response.ok) {
-                                status.style.color = '#10b981';
-                                status.innerHTML = 'Thanks! Your message has been sent.';
-                                form.reset();
-                            } else {
-                                const result = await response.json();
-                                status.style.color = '#ef4444';
-                                status.innerHTML = result.errors ? result.errors.map(error => error.message).join(', ') : 'Oops! There was a problem.';
-                            }
-                        } catch (error) {
-                            status.style.color = '#ef4444';
-                            status.innerHTML = 'Oops! Connectivity error occurred.';
-                        }
-                    };
-                </script>
+                <div id="form-status" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; display: none;">
+                </div>
             </div>
         </section>
 
