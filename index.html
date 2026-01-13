@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disha Kataria – AI Engineer</title>
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <canvas id="bg"></canvas>
+
+  <div class="content">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="profile">
+        <img src="profile.jpg" alt="Disha Kataria">
+      </div>
+      <div class="hero-text">
+        <h1>Disha Kataria</h1>
+        <div class="tagline">Thinking in Systems.</div>
+        <p class="subtitle">
+          AI & Machine Learning Engineer building enterprise LLM systems, RAG pipelines,
+          and trustworthy ML solutions. Student at K J Somaiya with 9.87 CGPA.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">9.87</div>
+            <div class="stat-label">CGPA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2x</div>
+            <div class="stat-label">National Finalist</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">78%</div>
+            <div class="stat-label">ML Accuracy</div>
+          </div>
+        </div>
+        <div class="socials">
+          <a href="https://linkedin.com/in/kataria-disha" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="https://github.com/disha802" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="mailto:Disha.kataria@somaiya.edu" aria-label="Email">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2>Education</h2>
+        <a href="about.html" style="color: #60a5fa; text-decoration: none; font-size: 0.9rem;">View All →</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="location.href='about.html'">
+          <div class="card-header">
+            <div>
+              <h3>B.Tech in AI & Data Science</h3>
+              <p style="color: #60a5fa; margin-bottom: 0.5rem;">K J Somaiya School of Engineering</p>
+              <p>2023 – 2027 | Mumbai</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+          </div>
+          <div class="stats-grid">
+            <span class="stat-badge">🏆 CGPA: 9.87/10.0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2>Recent Projects</h2>
+        <a href="projects.html" style="color: #60a5fa; text-decoration: none; font-size: 0.9rem;">View All →</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="location.href='projects.html'">
+          <div class="card-header">
+            <div>
+              <h3>DevRev Code Quality Evaluator</h3>
+              <p>LLM-based automated code review system</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="code-2"></i>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag">GPT-4</span>
+            <span class="tag">RAG</span>
+            <span class="tag">LangChain</span>
+          </div>
+        </div>
+        <div class="card" onclick="location.href='projects.html'">
+          <div class="card-header">
+            <div>
+              <h3>Intelligent Campus Assistant</h3>
+              <p>Smart India Hackathon 2024</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="message-circle"></i>
+            </div>
+          </div>
+          <div class="card-tags">
+            <span class="tag">NLP</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">🏆 National</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2>Experience</h2>
+        <a href="experience.html" style="color: #60a5fa; text-decoration: none; font-size: 0.9rem;">View All →</a>
+      </div>
+      <div class="grid">
+        <div class="card" onclick="location.href='experience.html'">
+          <div class="card-header">
+            <div>
+              <h3>AI Engineering Intern</h3>
+              <p style="color: #60a5fa;">QualityKiosk Technologies</p>
+            </div>
+            <div class="card-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+          </div>
+          <p>Enterprise LLM systems & RAG pipelines | Summer 2024</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Disha Kataria · Built with passion for AI & Systems Thinking</p>
+    </footer>
+
+  </div>
+
+  <script src="navigation.js"></script>
+  <script src="background.js"></script>
+</body>
+
+</html>
