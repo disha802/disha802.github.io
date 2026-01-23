@@ -44,12 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. Track & Handle Contact Form Submission (AJAX)
+    // NOTE: TEMPORARILY DISABLED AJAX TO TRIGGER FORMSPREE ACTIVATION REDIRECT
     const contactForm = document.querySelector('form[action*="formspree.io"]');
     if (contactForm) {
         const status = document.getElementById("form-status");
 
         contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+            // e.preventDefault(); // Commented out for activation
             const data = new FormData(e.target);
 
             // Track the attempt
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 form_id: 'main_contact_form'
             });
 
+            /* AJAX code commented out temporarily
             try {
                 const response = await fetch(e.target.action, {
                     method: contactForm.method,
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     status.style.color = "#f87171";
                 }
             }
+            */
         });
     }
 
