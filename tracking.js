@@ -13,12 +13,22 @@ function trackEvent(eventName, eventParams = {}) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Track Navigation Clicks
+    // 1. Track Navigation Clicks & CV Downloads
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', (e) => {
+            const isCV = link.classList.contains('nav-cv') || link.href.includes('CV.pdf');
+
+            if (isCV) {
+                trackEvent('cv_download', {
+                    file_name: 'CV.pdf',
+                    link_text: link.innerText
+                });
+            }
+
             trackEvent('navigation_click', {
                 link_text: link.innerText,
-                link_url: link.href
+                link_url: link.href,
+                is_cv_click: isCV
             });
         });
     });
@@ -67,7 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
+                    // Standard GA4 event for lead generation
+                    trackEvent('generate_lead', {
+                        form_id: 'main_contact_form',
+                        method: 'ajax'
+                    });
+
                     trackEvent('contact_form_submission_success');
+
                     if (status) {
                         status.innerHTML = "Message sent successfully! I'll get back to you soon.";
                         status.style.display = "block";
