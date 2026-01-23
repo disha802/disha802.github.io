@@ -11,6 +11,7 @@ function injectNavigation() {
       <a href="projects.html" class="${currentPage === 'projects.html' ? 'active' : ''}">Projects</a>
       <a href="skills.html" class="${currentPage === 'skills.html' ? 'active' : ''}">Skills</a>
       <a href="contact.html" class="${currentPage === 'contact.html' ? 'active' : ''}">Contact</a>
+      <a href="CV.pdf" target="_blank" class="nav-cv" style="border: 1px solid #60a5fa; padding: 4px 12px; border-radius: 20px; color: #60a5fa; font-weight: 600;">CV ↓</a>
     </div>
   `;
 
