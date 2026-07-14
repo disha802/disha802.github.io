@@ -5,9 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects – Disha Kataria</title>
+    <meta name="description" content="Selected projects by Disha Kataria — AutoPlan autonomous SDLC, Mann-ki-Baat analytics, DevRev code evaluator, and an intelligent campus assistant. Agentic AI, RAG, and NLP." />
+    <meta name="author" content="Disha Kataria" />
+    <link rel="canonical" href="https://disha802.github.io/projects.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Disha Kataria" />
+    <meta property="og:title" content="Projects – Disha Kataria" />
+    <meta property="og:description" content="AutoPlan autonomous SDLC, Mann-ki-Baat analytics, DevRev code evaluator, and a campus assistant — agentic AI, RAG, and NLP." />
+    <meta property="og:url" content="https://disha802.github.io/projects.html" />
+    <meta property="og:image" content="https://disha802.github.io/profile.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Projects – Disha Kataria" />
+    <meta name="twitter:description" content="AutoPlan autonomous SDLC, Mann-ki-Baat analytics, DevRev code evaluator, and a campus assistant — agentic AI, RAG, and NLP." />
+    <meta name="twitter:image" content="https://disha802.github.io/profile.jpg" />
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80'>🤖</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -34,12 +47,28 @@
 
 <body>
     <canvas id="bg"></canvas>
+    <div class="grid-veil"></div>
 
     <div class="content">
         <section>
-            <h2>Featured Projects</h2>
+            <h2><span class="eyebrow-dot"></span>Featured Projects</h2>
+            <p class="section-lede">Status chips reflect where each project actually stands — shipped, finalist, or still running.</p>
 
             <div class="project-images">
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop"
+                        alt="Analytics">
+                    <div class="project-image-overlay">
+                        <span>Mann-ki-Baat Analytics</span>
+                    </div>
+                </div>
+                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop"
+                        alt="Mental Health">
+                    <div class="project-image-overlay">
+                        <span>Mental Health Platform</span>
+                    </div>
+                </div>
                 <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
                     <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop"
                         alt="Code Quality">
@@ -54,135 +83,110 @@
                         <span>Campus Assistant</span>
                     </div>
                 </div>
-                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&h=300&fit=crop"
-                        alt="Mental Health">
-                    <div class="project-image-overlay">
-                        <span>Mental Health Platform</span>
-                    </div>
-                </div>
-                <div class="project-image" onclick="window.open('https://github.com/disha802', '_blank')">
-                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop"
-                        alt="Analytics">
-                    <div class="project-image-overlay">
-                        <span>Mann-ki-Baat Analytics</span>
-                    </div>
-                </div>
             </div>
 
             <div class="grid" style="margin-top: 3rem;">
-                <!-- DevRev Project -->
-                <div class="card" style="cursor: default;">
+                <!-- Mann-ki-Baat Analytics -->
+                <div class="card" onclick="window.open('https://github.com/disha802','_blank')" style="cursor: pointer;">
                     <div class="card-header">
                         <div>
-                            <h3>DevRev Code Quality Evaluator</h3>
-                            <p style="color: #60a5fa;">LLM-based automated code review system</p>
+                            <h3>Mann-ki-Baat Analytics & Stock Prediction</h3>
+                            <p style="color: #cdd6de;">NLP, Time Series · Research Project</p>
                         </div>
-                        <div class="card-icon">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Key Features</h4>
-                        <ul>
-                            <li>Designed comprehensive AI-powered code evaluation system aligned with DevRev standards
-                            </li>
-                            <li>Implemented GPT-4 based models with sophisticated custom prompt engineering</li>
-                            <li>Built RAG pipeline for contextual evaluation using organization-specific knowledge</li>
-                        </ul>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">GPT-4</span>
-                        <span class="tag">RAG Architecture</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">Vector DBs</span>
-                    </div>
-                </div>
-
-                <!-- Campus Chatbot -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <p style="color: #60a5fa;">Internal SIH Hackathon 2024</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="message-circle"></i>
-                        </div>
+                        <span class="status-chip research"><span class="dot"></span>Ongoing</span>
                     </div>
                     <div class="modal-section">
                         <h4>Overview</h4>
                         <ul>
-                            <li>Built conversational AI using advanced NLP and transformer models</li>
-                            <li>Implemented real-time campus query resolution for academic and administrative questions
-                            </li>
-                            <li>Handled multiple query types simultaneously with context retention</li>
-                        </ul>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">NLP</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">🏆 Internal</span>
-                    </div>
-                </div>
-
-                <!-- Mental Health Platform -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <p style="color: #60a5fa;">Internal SIH Hackathon 2025 Project</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="heart"></i>
-                        </div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Vision</h4>
-                        <ul>
-                            <li>Developing AI-driven system for student wellbeing and stress detection</li>
-                            <li>Implementing advanced sentiment analysis using fine-tuned transformer models</li>
-                            <li>Building privacy-preserving ML models for sensitive data</li>
-                        </ul>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">GenAI</span>
-                        <span class="tag">Sentiment Analysis</span>
-                        <span class="tag">Privacy ML</span>
-                        <span class="tag">🏆 Internal</span>
-                    </div>
-                </div>
-
-                <!-- Mann-ki-Baat Analytics -->
-                <div class="card" style="cursor: default;">
-                    <div class="card-header">
-                        <div>
-                            <h3>Mann-ki-Baat Analytics</h3>
-                            <p style="color: #60a5fa;">NLP + Stock Prediction Research</p>
-                        </div>
-                        <div class="card-icon">
-                            <i data-lucide="trending-up"></i>
-                        </div>
-                    </div>
-                    <div class="modal-section">
-                        <h4>Methodology</h4>
-                        <ul>
-                            <li>Used BERT for deep contextual understanding of policy speeches</li>
-                            <li>Correlated policy sentiment with sectoral market movements</li>
-                            <li>Achieved 78% accuracy in identifying policy-driven market impacts</li>
+                            <li>Topic modeling and sentiment analysis on PM speeches using BERT and LDA</li>
+                            <li>Correlating policy announcements with market movements to forecast sectoral stock
+                                trends</li>
                         </ul>
                     </div>
                     <div class="card-tags">
                         <span class="tag">BERT</span>
                         <span class="tag">LDA</span>
                         <span class="tag">Time Series</span>
-                        <span class="tag">78% Accuracy</span>
+                        <span class="tag">Jan 2026 – Ongoing</span>
+                    </div>
+                </div>
+
+                <!-- Mental Health Platform -->
+                <div class="card" onclick="window.open('https://github.com/disha802','_blank')" style="cursor: pointer;">
+                    <div class="card-header">
+                        <div>
+                            <h3>Mental Health Support Platform</h3>
+                            <p style="color: #cdd6de;">GenAI · Smart India Hackathon 2025</p>
+                        </div>
+                        <span class="status-chip finalist"><span class="dot"></span>Finalist</span>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Overview</h4>
+                        <ul>
+                            <li>Built an AI-driven support system combining sentiment analysis with personalized
+                                interventions</li>
+                            <li>Applied privacy-preserving ML for student stress detection and wellness tracking</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">GenAI</span>
+                        <span class="tag">Sentiment Analysis</span>
+                        <span class="tag">Privacy ML</span>
+                    </div>
+                </div>
+
+                <!-- DevRev Project -->
+                <div class="card" onclick="window.open('https://github.com/disha802','_blank')" style="cursor: pointer;">
+                    <div class="card-header">
+                        <div>
+                            <h3>DevRev Code Quality Evaluator</h3>
+                            <p style="color: #cdd6de;">AI/ML · Python, LangChain, RAG</p>
+                        </div>
+                        <span class="status-chip shipped"><span class="dot"></span>Shipped</span>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Overview</h4>
+                        <ul>
+                            <li>Engineered an AI code evaluator enforcing DevRev coding standards via GPT-4 and
+                                custom prompt engineering</li>
+                            <li>Surfaced code quality issues and proposed automated fixes at review time</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">GPT-4</span>
+                        <span class="tag">RAG Architecture</span>
+                        <span class="tag">LangChain</span>
+                    </div>
+                </div>
+
+                <!-- Campus Chatbot -->
+                <div class="card" onclick="window.open('https://github.com/disha802','_blank')" style="cursor: pointer;">
+                    <div class="card-header">
+                        <div>
+                            <h3>Intelligent Campus Assistant Chatbot</h3>
+                            <p style="color: #cdd6de;">NLP · Smart India Hackathon 2024</p>
+                        </div>
+                        <span class="status-chip finalist"><span class="dot"></span>Finalist</span>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Overview</h4>
+                        <ul>
+                            <li>Built a conversational assistant on transformer models for real-time campus query
+                                resolution</li>
+                            <li>Advanced to the national round after clearing institutional selection</li>
+                        </ul>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">Real-time</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>© <span id="year"></span> Disha Kataria · Built with passion for AI & Systems Thinking</p>
+            <p>© <span id="year"></span> Disha Kataria · Designing systems that reason, retrieve, and ship.</p>
         </footer>
     </div>
 

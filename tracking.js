@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (status) {
                         status.innerHTML = "Message sent successfully! I'll get back to you soon.";
                         status.style.display = "block";
-                        status.style.color = "#60a5fa";
+                        status.style.color = "#38e1e6";
                     }
                     contactForm.reset();
                 } else {
@@ -111,19 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Track Secret Mode Buttons
-    ['starsButton', 'snowButton', 'bubblesButton'].forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) {
-            btn.addEventListener('click', () => {
-                trackEvent('secret_mode_toggle', {
-                    effect_type: id.replace('Button', '')
-                });
-            });
-        }
-    });
-
-    // 6. Track Education/Experience Card Clicks
+    // 5. Track Education/Experience Card Clicks
     document.querySelectorAll('.card').forEach(card => {
         if (!card.hasAttribute('onclick') && !card.querySelector('a')) {
             card.addEventListener('click', () => {
