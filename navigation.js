@@ -24,9 +24,6 @@ function injectChrome() {
   const nav = document.createElement('nav');
   nav.className = 'editor-chrome';
   nav.innerHTML = `
-    <div class="traffic" aria-hidden="true">
-      <span class="tl red"></span><span class="tl yellow"></span><span class="tl green"></span>
-    </div>
     <div class="tabs">
       ${PAGES.map(([file]) => `
         <a href="${file}" class="tab${file === current ? ' active' : ''}">
