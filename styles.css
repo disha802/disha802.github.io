@@ -463,3 +463,25 @@ footer { margin: 5rem 0 0; font-family: var(--font-mono); font-size: 0.72rem; co
 }
 
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* ============================================================
+   ICON SIZING
+   lucide.createIcons() swaps each <i data-lucide> for an <svg>,
+   so sizes must land on the svg. These rules also cover the
+   inline GitHub/LinkedIn brand marks (lucide v1 dropped brand
+   icons, so those ship as raw SVG).
+   ============================================================ */
+.tab svg { width: 13px; height: 13px; flex-shrink: 0; }
+.tab > svg:first-child { color: var(--text-faint); }
+.tab.active > svg:first-child,
+.tab.nav-cv > svg:first-child { color: var(--cyan); }
+.breadcrumb svg { width: 13px; height: 13px; flex-shrink: 0; }
+.sb-item svg { width: 12px; height: 12px; flex-shrink: 0; }
+.card-icon svg { width: 21px; height: 21px; }
+.core-toolbox .tag svg { width: 12px; height: 12px; margin-right: 5px; }
+.cmdk-input-row > svg { width: 16px; height: 16px; color: var(--text-dim); flex-shrink: 0; }
+.cmdk-item svg { width: 15px; height: 15px; color: var(--text-dim); flex-shrink: 0; }
+.cmdk-item.active svg { color: var(--cyan); }
+.socials a svg { width: 19px; height: 19px; }
+/* filled brand marks read heavier than stroked icons — nudge them down */
+.socials a .brand-icon { width: 17px; height: 17px; }

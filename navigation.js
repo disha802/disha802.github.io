@@ -18,6 +18,12 @@ const PAGES = [
 const IS_MAC = /Mac|iPhone|iPad/.test(navigator.platform);
 const EMAIL = 'Disha.m.kataria@gmail.com';
 
+/* Lucide v1 dropped its brand icons, so GitHub/LinkedIn ship as inline marks. */
+const BRAND = {
+  github: '<svg class="brand-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.91c.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>',
+  linkedin: '<svg class="brand-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>',
+};
+
 function injectChrome() {
   const current = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -91,8 +97,8 @@ function injectPalette() {
     })),
     { label: 'Download CV', hint: 'CV.pdf', icon: 'file-down', run: () => window.open('CV.pdf', '_blank') },
     { label: 'Copy email address', hint: EMAIL, icon: 'mail', run: copyEmail },
-    { label: 'Open GitHub', hint: 'github.com/disha802', icon: 'github', run: () => window.open('https://github.com/disha802', '_blank') },
-    { label: 'Open LinkedIn', hint: 'linkedin.com/in/kataria-disha', icon: 'linkedin', run: () => window.open('https://linkedin.com/in/kataria-disha', '_blank') },
+    { label: 'Open GitHub', hint: 'github.com/disha802', svg: BRAND.github, run: () => window.open('https://github.com/disha802', '_blank') },
+    { label: 'Open LinkedIn', hint: 'linkedin.com/in/kataria-disha', svg: BRAND.linkedin, run: () => window.open('https://linkedin.com/in/kataria-disha', '_blank') },
   ];
 
   const overlay = document.createElement('div');
@@ -120,7 +126,7 @@ function injectPalette() {
     list.innerHTML = filtered.length
       ? filtered.map((c, i) => `
         <li class="cmdk-item${i === active ? ' active' : ''}" data-i="${i}" role="option">
-          <i data-lucide="${c.icon}"></i><span class="cmdk-label">${c.label}</span><span class="cmdk-hint">${c.hint}</span>
+          ${c.svg || `<i data-lucide="${c.icon}"></i>`}<span class="cmdk-label">${c.label}</span><span class="cmdk-hint">${c.hint}</span>
         </li>`).join('')
       : '<li class="cmdk-empty">No matching commands</li>';
     if (typeof lucide !== 'undefined') lucide.createIcons();
