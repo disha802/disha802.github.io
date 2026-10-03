@@ -1,7 +1,7 @@
 /* ============================================================
-   Editor chrome + command palette — "Frosted / VS Code" shell
-   Injected once per page: window title bar (traffic lights +
-   editor tabs = nav), breadcrumb, status bar, and a ⌘K/Ctrl-K
+   Editor chrome + command palette — "Editor" shell
+   Injected once per page: window title bar (editor tabs = nav),
+   breadcrumb, status bar with live Ln/Col, and a ⌘K/Ctrl-K
    command palette. Keeps all six pages in sync without editing
    their markup.
    ============================================================ */
@@ -28,65 +28,26 @@ function injectChrome() {
   const current = window.location.pathname.split('/').pop() || 'index.html';
 
   const nav = document.createElement('nav');
-  nav.className = 'editor-chrome';
+  nav.className = 'pill-nav';
   nav.innerHTML = `
-    <div class="tabs">
-      ${PAGES.map(([file]) => `
-        <a href="${file}" class="tab${file === current ? ' active' : ''}">
-          <i data-lucide="file-code"></i><span>${file}</span><i data-lucide="x" class="tab-x"></i>
-        </a>`).join('')}
-      <a href="CV.pdf" target="_blank" class="tab nav-cv">
-        <i data-lucide="file-down"></i><span>CV.pdf</span>
-      </a>
+    <a href="index.html" class="pn-brand" aria-label="Home"><span class="pn-mark"></span>Disha</a>
+    <div class="pn-links">
+      ${PAGES.filter(([f]) => f !== 'index.html').map(([file, label]) =>
+        `<a href="${file}" class="pn-link${file === current ? ' active' : ''}">${label}</a>`).join('')}
     </div>
+    <a href="CV.pdf" target="_blank" class="pn-cta">CV <i data-lucide="arrow-up-right"></i></a>
+    <button class="pn-kbd sb-cmdk" type="button" aria-label="Open search and commands" title="Search · ${IS_MAC ? '⌘K' : 'Ctrl K'}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+    <button class="pn-theme" type="button" aria-label="Switch between light and dark theme" title="Toggle theme">
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
   `;
   document.body.prepend(nav);
-
-  const content = document.querySelector('.content');
-  if (content) {
-    const bc = document.createElement('div');
-    bc.className = 'breadcrumb';
-    bc.innerHTML = `
-      <i data-lucide="folder"></i><span>portfolio</span>
-      <i data-lucide="chevron-right"></i><span class="crumb-file">${current}</span>
-    `;
-    content.prepend(bc);
-  }
-
-  const sb = document.createElement('div');
-  sb.className = 'statusbar';
-  sb.innerHTML = `
-    <div class="sb-left">
-      <span class="sb-item sb-accent"><i data-lucide="git-branch"></i>main</span>
-      <span class="sb-item sb-hide"><i data-lucide="circle-check"></i>0<i data-lucide="triangle-alert" style="margin-left:8px"></i>0</span>
-    </div>
-    <div class="sb-right">
-      <span class="sb-item sb-pos sb-hide">Ln 1, Col 1</span>
-      <span class="sb-item sb-hide">UTF-8</span>
-      <span class="sb-item">HTML</span>
-      <span class="sb-item sb-cmdk" role="button" tabindex="0" title="Command palette">${IS_MAC ? '⌘K' : 'Ctrl K'}</span>
-      <span class="sb-item sb-signal"><span class="sb-dot"></span>Open to roles</span>
-    </div>
-  `;
-  document.body.appendChild(sb);
-
-  // live Ln/Col driven by scroll position (editor flavour)
-  const pos = sb.querySelector('.sb-pos');
-  if (pos) {
-    const maxLn = 240;
-    let ticking = false;
-    const update = () => {
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      const p = h > 0 ? window.scrollY / h : 0;
-      const ln = Math.max(1, Math.round(p * maxLn));
-      const col = (Math.round(window.scrollY) % 90) + 1;
-      pos.textContent = `Ln ${ln}, Col ${col}`;
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-  }
+  nav.querySelector('.pn-theme').addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('theme-v2', next); } catch (e) {}
+  });
 }
 
 function injectPalette() {
@@ -131,12 +92,10 @@ function injectPalette() {
       : '<li class="cmdk-empty">No matching commands</li>';
     if (typeof lucide !== 'undefined') lucide.createIcons();
   };
-
   const filter = (q) => {
     q = q.toLowerCase().trim();
     return q ? commands.filter(c => (c.label + ' ' + c.hint).toLowerCase().includes(q)) : commands;
   };
-
   const openPalette = () => {
     open = true;
     overlay.classList.add('visible');
@@ -150,6 +109,7 @@ function injectPalette() {
     overlay.setAttribute('aria-hidden', 'true');
   };
   const run = (i) => { const c = filtered[i]; if (c) { closePalette(); c.run(); } };
+  const scrollActive = () => { const el = list.querySelector('.cmdk-item.active'); if (el) el.scrollIntoView({ block: 'nearest' }); };
 
   input.addEventListener('input', () => { filtered = filter(input.value); active = 0; render(); });
   overlay.addEventListener('click', (e) => {
@@ -161,7 +121,6 @@ function injectPalette() {
     const li = e.target.closest('.cmdk-item');
     if (li && +li.dataset.i !== active) { active = +li.dataset.i; render(); }
   });
-
   document.addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); open ? closePalette() : openPalette(); return; }
     if (!open) return;
@@ -171,12 +130,6 @@ function injectPalette() {
     else if (e.key === 'Enter') { e.preventDefault(); run(active); }
   });
 
-  const scrollActive = () => {
-    const el = list.querySelector('.cmdk-item.active');
-    if (el) el.scrollIntoView({ block: 'nearest' });
-  };
-
-  // status-bar shortcut opens it too
   const trigger = document.querySelector('.sb-cmdk');
   if (trigger) {
     trigger.addEventListener('click', openPalette);
@@ -205,4 +158,59 @@ function showToast(msg) {
 document.addEventListener('DOMContentLoaded', () => {
   injectChrome();
   injectPalette();
+});
+
+/* UX extras: skip link, scroll progress, contact button, next-page link, theme toggle */
+document.addEventListener('DOMContentLoaded', () => {
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  const content = document.querySelector('.content');
+
+  if (content) {
+    content.id = content.id || 'main';
+    content.setAttribute('tabindex', '-1');
+    const skip = document.createElement('a');
+    skip.className = 'skip-link';
+    skip.href = '#' + content.id;
+    skip.textContent = 'Skip to content';
+    document.body.prepend(skip);
+  }
+
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+
+  const hire = document.createElement('a');
+  hire.className = 'hire-fab';
+  hire.href = 'contact.html';
+  hire.textContent = 'Contact me';
+  if (current !== 'contact.html') document.body.appendChild(hire);
+
+  if (content && PAGES.some(([f]) => f === current) && !document.querySelector('.next-page')) {
+    const idx = PAGES.findIndex(([f]) => f === current);
+    const next = idx >= 0 && idx < PAGES.length - 1 ? PAGES[idx + 1] : null;
+    const a = document.createElement('a');
+    a.className = 'next-page';
+    if (next) {
+      a.href = next[0];
+      a.innerHTML = '<span>Next</span>' + next[1] + ' <i data-lucide="arrow-right"></i>';
+    } else {
+      a.href = 'index.html';
+      a.innerHTML = '<span>Back</span>Home <i data-lucide="arrow-up-right"></i>';
+    }
+    const footer = content.querySelector('footer');
+    content.insertBefore(a, footer || null);
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
+
+  let ticking = false;
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const p = h > 0 ? Math.min(1, window.scrollY / h) : 0;
+    bar.style.transform = 'scaleX(' + p + ')';
+    hire.classList.toggle('show', window.scrollY > 420);
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
 });
