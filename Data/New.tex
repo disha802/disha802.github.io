@@ -1,0 +1,143 @@
+\documentclass[10.5pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage[T1]{fontenc}
+\usepackage{lato}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{ragged2e}
+
+% ---------- Colors ----------
+\definecolor{HeadBlue}{HTML}{0A2342}
+\definecolor{RuleGrey}{HTML}{B0B0B0}
+\definecolor{TextGrey}{HTML}{333333}
+
+\color{TextGrey}
+
+% ---------- Section formatting ----------
+\titleformat{\section}
+  {\color{HeadBlue}\large\bfseries}
+  {}{0em}{}
+  [\vspace{-0.3em}{\color{RuleGrey}\hrule height 0.8pt}]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% ---------- Misc ----------
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\hypersetup{colorlinks=true, urlcolor=HeadBlue, linkcolor=HeadBlue}
+\setlist[itemize]{leftmargin=1.1em, itemsep=1pt, topsep=2pt, parsep=0pt}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  \textit{#3} \hfill #4\\[2pt]
+}
+
+% ================================================================
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\Huge \rmfamily\bfseries\color{HeadBlue} Disha Kataria}\\[4pt]
+  {\small
+    \faEnvelope\ \href{mailto:Disha.m.kataria@gmail.com}{Disha.m.kataria@gmail.com} \quad|\quad
+    \faPhone\ +91 7045047173 \quad|\quad
+    \faMapMarker*\ Thane, Maharashtra, India \\[2pt]
+    \faLinkedin\ \href{https://linkedin.com/in/kataria-disha/}{linkedin.com/in/kataria-disha} \quad|\quad
+    \faGithub\ \href{https://github.com/disha802}{github.com/disha802} \quad|\quad
+    \faGlobe\ \href{https://disha802.github.io}{disha802.github.io}
+  }
+\end{center}
+\vspace{-4pt}
+
+% ---------- Education ----------
+\section*{Education}
+\entry{K J Somaiya School of Engineering, Mumbai}{2023 -- 2027}
+      {B.Tech, Artificial Intelligence \& Data Science}{CGPA: 9.76 / 10.0}
+\begin{itemize}
+  \item Semester GPA: 9.53, 9.91, 10, 10, 10, 10 (Sem 1--6); Honors (Applied Cybersecurity) GPA: 10, 10, 10, 10 (Sem 3--6)
+  \item Coursework: Data Structures \& Algorithms, Machine Learning, Deep Learning, NLP, Computer Vision, Cloud Computing, Databases
+\end{itemize}
+\entry{PACE Junior Science College, Mumbai}{2021 -- 2023}
+      {Higher Secondary (HSC)}{76.33\% \,|\, JEE Mains: 90.29 \%ile}
+\entry{The Universal School, Ghatkopar, Mumbai}{2011 -- 2021}
+      {IGCSE, University of Cambridge}{91.28\%}
+
+% ---------- Technical Experience ----------
+\section*{Technical Experience}
+
+\entry{AI Engineering Intern}{June 2026 -- Oct 2026}{KPMG India}{Mumbai}
+\begin{itemize}
+  \item Built \textbf{AutoPlan}, an autonomous SDLC platform on ServiceNow integrating a Python pipeline and REST APIs to turn plain-English ideas into user stories, release plans, test cases and change requests
+  \item Designed a dual-LLM generator--reviewer architecture with an independent model scoring generated artefacts to gate quality automatically
+  \item Built a configurable human-in-the-loop framework and integrated it into production workflows; documented pipeline design and learnings for the team
+\end{itemize}
+
+\entry{AI Engineering Intern}{Dec 2025}{Bootlabs Technologies Pvt. Ltd.}{Mumbai}
+\begin{itemize}
+  \item Architected a multi-source, citation-grounded RAG data pipeline with multimodal input support
+  \item Built and deployed an automated resume ingestion and analysis pipeline, from data collection and preprocessing through model-based candidate evaluation
+\end{itemize}
+
+\entry{AI Engineering Intern}{December 2024}{QualityKiosk Technologies India Pvt. Ltd.}{Mumbai}
+\begin{itemize}
+  \item Developed an enterprise AI code generator and evaluator using LLMs and a RAG architecture; automated code quality assessment to cut manual review effort
+  \item Collaborated with cross-functional engineering teams to integrate the tool into existing workflows
+\end{itemize}
+
+% ---------- Projects ----------
+\section*{Projects}
+
+\entry{Mann-ki-Baat Analytics \& Stock Prediction}{Jan 2026 -- Ongoing}{Python, NLP, SQL, Time Series -- Research Project}{}
+\begin{itemize}
+  \item Collected and cleaned PM speech transcripts and market data; ran topic modeling (BERT, LDA) and exploratory data analysis to correlate policy announcements with sectoral stock movements
+  \item Built visualizations and hypothesis tests to validate correlation signals before model training
+\end{itemize}
+
+\entry{Mental Health Support Platform}{Sept 2025}{Flask, GenAI -- Smart India Hackathon}{}
+\begin{itemize}
+  \item Built and evaluated an ML-based sentiment analysis pipeline with a Flask web app front end for personalized wellness interventions
+  \item Applied privacy-preserving ML techniques for student stress detection and tracking
+\end{itemize}
+
+\entry{Intelligent Campus Assistant Chatbot}{Sept 2024}{NLP, Python -- Smart India Hackathon}{}
+\begin{itemize}
+  \item Built a conversational assistant on transformer models for real-time campus query resolution; advanced to the national round after institutional selection
+\end{itemize}
+
+\entry{DevRev Code Quality Evaluator}{Dec 2024}{Python, LangChain, RAG, API Development}{}
+\begin{itemize}
+  \item Built an API-integrated AI code evaluator enforcing coding standards via GPT-4 and custom prompt engineering, surfacing issues and proposed fixes at review time
+\end{itemize}
+
+% ---------- Skills ----------
+\section*{Technical Skills}
+\begin{itemize}[leftmargin=1.1em]
+  \item \textbf{Languages:} Python, JavaScript, C++, SQL
+  \item \textbf{GenAI \& LLMs:} LLMs (GPT-4, BERT), RAG, Prompt Engineering, LangChain, Hugging Face
+  \item \textbf{ML \& Data:} scikit-learn, PyTorch, TensorFlow, Pandas, NumPy, exploratory data analysis, model building \& evaluation, data pipelines
+  \item \textbf{Web \& APIs:} REST API design/integration, Flask, ServiceNow workflow automation
+  \item \textbf{DevOps \& Cloud:} Docker, Kubernetes, AWS, Azure, GCP fundamentals, OpenStack, Git/GitHub
+  \item \textbf{Data \& Visualization:} SQL, MongoDB/NoSQL, Matplotlib, Seaborn, Tableau
+\end{itemize}
+
+% ---------- Leadership / Achievements ----------
+\section*{Leadership \& Achievements}
+\begin{itemize}
+  \item \textbf{Smart India Hackathon} -- National Finalist (2024, 2025)
+  \item \textbf{MUN Chairperson (2021)} -- Led a UNICEF committee on Educational Rights
+  \item \textbf{MUN Delegate (2020)} -- Represented the Netherlands on Counter-Terrorism
+\end{itemize}
+
+% ---------- Certifications / Languages ----------
+\section*{Certifications \& Languages}
+\begin{itemize}
+  \item \textbf{DELF B1 (French)} -- Alliance Française, 77.5\% (2024)
+  \item \textbf{Spoken Languages:} English (Fluent), Hindi (Fluent), French (Proficient)
+\end{itemize}
+
+\end{document}

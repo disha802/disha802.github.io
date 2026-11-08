@@ -1,0 +1,175 @@
+\documentclass[10pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lato}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{ragged2e}
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+
+% ---------- Colors ----------
+\definecolor{HeadBlue}{HTML}{0A2342}
+\definecolor{RuleGrey}{HTML}{B0B0B0}
+\definecolor{TextGrey}{HTML}{333333}
+
+\color{TextGrey}
+
+% ---------- Section formatting ----------
+\titleformat{\section}
+  {\color{HeadBlue}\large\bfseries}
+  {}{0em}{}
+  [\vspace{-0.3em}{\color{RuleGrey}\hrule height 0.8pt}]
+\titlespacing{\section}{0pt}{7pt}{4pt}
+
+% ---------- Misc ----------
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\hypersetup{colorlinks=true, urlcolor=HeadBlue, linkcolor=HeadBlue}
+\setlist[itemize]{leftmargin=1.1em, itemsep=0.5pt, topsep=1pt, parsep=0pt}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill \textit{#2}\\
+  \textit{#3} \hfill #4\\[2pt]
+}
+
+\newcommand{\job}[4]{\textbf{#1}\ifx\relax#2\relax\else, \textit{#2}\fi, #3 \hfill #4\par\vspace{-1pt}}
+
+\newcommand{\cert}[3]{\item \textbf{#1} -- #2 \hfill \textit{#3}}
+
+% ================================================================
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+  {\Huge \rmfamily\bfseries\color{HeadBlue} Disha Kataria}\\[4pt]
+  {\small
+    Email: \href{mailto:Disha.m.kataria@gmail.com}{Disha.m.kataria@gmail.com} \quad|\quad
+    Phone: +91 7045047173 \quad|\quad
+    Location: Thane, Maharashtra, India \\[2pt]
+    LinkedIn: \href{https://linkedin.com/in/kataria-disha/}{linkedin.com/in/kataria-disha} \quad|\quad
+    GitHub: \href{https://github.com/disha802}{github.com/disha802} \quad|\quad
+    LeetCode: \href{https://leetcode.com/u/disha802/}{leetcode.com/u/disha802} \quad|\quad
+    Portfolio: \href{https://disha802.github.io}{disha802.github.io}
+  }
+\end{center}
+\vspace{-4pt}
+
+% ---------- Education ----------
+\section*{Education}
+\entry{K J Somaiya School of Engineering, Mumbai}{2023 -- 2027}
+      {B.Tech, Artificial Intelligence \& Data Science}{CGPA: 9.91 / 10.0}
+\begin{itemize}
+  \item Semester GPA: (Sem 1--6) 9.53, 9.91, 10, 10, 10, 10 ; Honors (Applied Cybersecurity) (Sem 3--6) GPA: 10, 10, 10, 10 
+  \item Coursework: Data Structures \& Algorithms, Machine Learning, Deep Learning, Text Analytics, Big Data Analytics, Soft Computing, Data Warehousing \& Mining, Databases
+  \item Practical application of Generative AI, LLMs, RAG, AI Agents and Vector DBs across internships at KPMG, BootLabs and QualityKiosk
+\end{itemize}
+\entry{PACE Junior Science College, Mumbai}{2021 -- 2023}
+      {Higher Secondary (HSC)}{76.33\% \,|\, JEE Mains: 90.29 \%ile}
+\entry{The Universal School, Ghatkopar, Mumbai}{2011 -- 2021}
+      {IGCSE, University of Cambridge}{91.28\%}
+
+% ---------- Technical Experience ----------
+\section*{Technical Experience}
+
+\job{AI Engineering Intern (Academic Trainee)}{KPMG India, Digital Next}{Mumbai}{Jun 2026 -- Oct 2026}
+\begin{itemize}
+  \item Built \textbf{AutoPlan}, an autonomous SDLC platform on ServiceNow (Python pipeline + REST APIs) that turns plain-English ideas into user stories, release plans, test cases and change requests
+  \item Designed a dual-LLM generator--reviewer architecture, with an independent model scoring artefacts to gate quality automatically
+  \item Built a configurable human-in-the-loop framework and integrated it into production workflows
+\end{itemize}
+
+\job{AI Engineering Intern}{BootLabs Technologies Pvt. Ltd.}{Kurla, Mumbai}{Nov 2025 -- Jan 2026}
+\begin{itemize}
+  \item Architected a multi-source, citation-grounded RAG pipeline with multimodal input, using embedding models and vector databases
+  \item Built and deployed an automated resume ingestion and analysis pipeline, from preprocessing to model-based candidate evaluation
+  \item Built backend services with FastAPI, Tortoise ORM and LangChain
+\end{itemize}
+
+\job{AI Engineering Intern (Consultant)}{QualityKiosk Technologies India Pvt. Ltd.}{Mumbai}{Dec 2024 -- Jan 2025}
+\begin{itemize}
+  \item Developed an enterprise AI code generator and evaluator using LLMs and RAG, automating code quality assessment to cut manual review effort, and integrated it into existing engineering workflows
+\end{itemize}
+
+% ---------- Projects ----------
+\section*{Projects}
+
+\job{Mann-ki-Baat Analytics \& Stock Prediction}{Research Project}{Python, NLP, SQL, Time Series}{Jan 2026 -- Ongoing}
+\begin{itemize}
+  \item Cleaned PM speech transcripts and market data; ran topic modeling (BERT, LDA), EDA and hypothesis tests to correlate policy announcements with sectoral stock movements
+\end{itemize}
+
+\job{Mental Health Support Platform}{Smart India Hackathon}{Flask, GenAI}{Sept 2025}
+\begin{itemize}
+  \item Built and evaluated an ML sentiment analysis pipeline with a Flask front end for personalized wellness interventions, applying privacy-preserving ML for student stress detection
+\end{itemize}
+
+\job{DevRev Code Quality Evaluator}{}{Python, LangChain, RAG, APIs}{Dec 2024}
+\begin{itemize}
+  \item Built an API-integrated AI code evaluator enforcing coding standards via GPT-4 and custom prompt engineering, surfacing issues and fixes at review time
+\end{itemize}
+
+\job{Intelligent Campus Assistant Chatbot}{Smart India Hackathon}{NLP, Python}{Sept 2024}
+\begin{itemize}
+  \item Built a transformer-based assistant for real-time campus query resolution; advanced to the national round
+\end{itemize}
+
+% ---------- Additional Experience ----------
+\section*{Additional Experience}
+\begin{itemize}[leftmargin=1.1em, itemsep=2pt]
+  \item \textbf{French Content Development Intern}, \textit{Learn French Enligne}, Remote \hfill Jan 2025 -- Apr 2025\\
+        200-hour internship: built CEFR-aligned content, worksheets and articles; conducted A1 sessions; coached students for TEF, TCF and DELF
+  \item \textbf{Freelance French Tutor}, \textit{Independent}, Mumbai / Remote \hfill 2026 -- Present\\
+        Tutoring Grade 10 IB MYP students in French across all four language-acquisition criteria
+  \item \textbf{French Language Trainer \& Curriculum Developer}, \textit{L'Avenir Language Alliance}, Remote \hfill 2021 -- 2023\\
+        Designed and delivered a French curriculum for young learners (ages 4--14) with digital resources and assessments
+  \item \textbf{Administrative Intern}, \textit{Somaiya Sports Academy}, Mumbai \hfill Aug 2023 -- Oct 2023\\
+        164-hour Earn \& Learn internship supporting sports administration operations
+\end{itemize}
+
+% ---------- Skills ----------
+\section*{Technical Skills}
+\begin{itemize}[leftmargin=1.1em]
+  \item \textbf{Languages:} Python, JavaScript, C++, SQL
+  \item \textbf{GenAI \& Agents:} Generative AI, LLMs (GPT-4, BERT), RAG, AI Agents, Agentic AI Frameworks, Knowledge Graphs, Vector Databases, Embeddings, Prompt Engineering, LangChain, Hugging Face
+  \item \textbf{ML \& Data:} scikit-learn, PyTorch, TensorFlow, Pandas, NumPy, MongoDB/NoSQL, Matplotlib, Seaborn, Tableau
+  \item \textbf{Backend \& APIs:} FastAPI, Flask, Tortoise ORM, REST APIs, ServiceNow
+  \item \textbf{Cloud \& DevOps:} AWS, Azure, Google Cloud, Docker, Kubernetes, CI/CD (GitHub Actions), Git/GitHub
+  \item \textbf{Responsible AI \& Tools:} AI Governance, Ethics in AI, Claude Code, Antigravity; UX and graphic design
+\end{itemize}
+
+% ---------- Leadership / Achievements ----------
+\section*{Leadership \& Achievements}
+\begin{itemize}
+  \item \textbf{Smart India Hackathon} -- National Finalist (2024, 2025)
+  \item \textbf{MUN Chairperson (2021)} -- Led a UNICEF committee on Educational Rights
+  \item \textbf{MUN Delegate (2020)} -- Represented the Netherlands on Counter-Terrorism
+\end{itemize}
+
+% ---------- Certifications ----------
+\section*{Certifications}
+\begin{itemize}[leftmargin=1.1em]
+  \cert{Introduction to Model Context Protocol}{Anthropic}{Oct 2026}
+  \cert{Claude 101}{Anthropic}{Oct 2026}
+  \cert{Google Cloud Fundamentals: Core Infrastructure}{Google Cloud (Coursera)}{Sep 2026}
+  \cert{GitHub Actions Masterclass: From Beginner to Advanced}{Packt (Coursera)}{Sep 2026}
+  \cert{Introduction to FastAPI and Backend Development Fundamentals}{Packt (Coursera)}{Sep 2026}
+  \cert{Introduction to Negotiation}{Yale University (Coursera)}{May 2026}
+  \cert{Leadership in 21st Century Organizations}{Copenhagen Business School (Coursera)}{May 2026}
+  \cert{Inspiring Leadership through Emotional Intelligence}{Case Western Reserve University (Coursera)}{Apr 2026}
+  \cert{Graphic Design, Web Design (Strategy \& IA; Wireframes to Prototypes), UX Design Fundamentals}{CalArts (Coursera)}{Oct 2025}
+  \cert{Modern Art \& Ideas}{The Museum of Modern Art (Coursera)}{Sep 2025}
+  \cert{DELF B1 (French)}{France Education International}{Jul 2024}
+\end{itemize}
+
+% ---------- Languages ----------
+\section*{Languages}
+\begin{itemize}
+  \item English (Fluent), Hindi (Fluent), French (DELF B1)
+\end{itemize}
+
+\end{document}
